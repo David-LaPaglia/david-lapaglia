@@ -87,3 +87,19 @@ p {
     border: 3px solid rgba(0, 0, 0, 0.2); /* Adds a subtle oval frame */
     overflow: hidden; /* Ensures the image stays within the frame */
 }
+.resume {
+  max-width: 800px; /* Limits the width to ensure the text is not too wide */
+  margin: 0 auto; /* Centers the resume on the page */
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px; /* Gives slight rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
+  text-align: left;
+}
+.resume h2, .resume h3, .resume h4 {
+  text-align: left; /* Left-aligns the headings inside the resume */
+  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-left: 50px;
+  color: #444;
+}
