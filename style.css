@@ -71,3 +71,19 @@ p {
     text-align: center; /* Optional: centers the text inside the element */
     padding: 20px;
   }
+
+  .frame-image { 
+    width: 250px;
+    margin: 0 auto;
+    float: left;
+} 
+
+.frame-image img { 
+    display: block;
+    margin-bottom: 5px;
+    width: 100%;
+    height: auto;
+    border-radius: 50%; /* Makes the image oval-shaped */
+    border: 3px solid rgba(0, 0, 0, 0.2); /* Adds a subtle oval frame */
+    overflow: hidden; /* Ensures the image stays within the frame */
+}
