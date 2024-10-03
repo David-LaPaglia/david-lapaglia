@@ -8,3 +8,66 @@ html{
     padding: 0;
     background-color: whitesmoke;
   }
+h1{
+    text-align: center;
+    font-weight: 500;
+    font-size: 2.4em;
+}
+h2{
+    text-align: center;
+    font-weight: 500;
+    font-size: 2em;
+}
+h3{
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.9em;
+}
+h4{
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.75em;
+}
+nav {
+    height: auto;
+    flex: 100%;
+    display: flex;
+    background-color: rgb(29, 89, 82);
+    position: sticky;
+    top:0;
+}
+  
+  nav ul {
+    padding: 0;
+    list-style-type: none;
+    flex: 2;
+    display: flex;
+  }
+  
+  nav li {
+    display: inline;
+    text-align: center;
+    flex: 1;
+  }
+    p{
+        text-align: center;
+        font-size: 1.4em;
+    }
+nav a, nav span {
+    display: inline-block;
+    font-size: 2vw;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 1.8em;  
+  }
+  nav a:hover{
+    color: rgb(185, 202, 200);
+}
+p {
+    width: 80%; /* 3/5th is 60% */
+    margin: 0 auto; /* Centers the text horizontally */
+    text-align: center; /* Optional: centers the text inside the element */
+    padding: 20px;
+  }
