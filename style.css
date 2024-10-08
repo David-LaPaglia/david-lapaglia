@@ -73,9 +73,9 @@ p {
   }
 
   .frame-image { 
-    width: 250px;
+    width: 350px;
     margin: 0 auto;
-    float: left;
+    float: center;
 } 
 
 .frame-image img { 
