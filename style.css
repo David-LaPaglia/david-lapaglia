@@ -72,21 +72,40 @@ p {
     padding: 20px;
   }
 
-  .frame-image { 
+.frame-image {
     width: 350px;
+    height: 350px;
     margin: 0 auto;
-    float: center;
-} 
+    display: block; /* Center the image */
+}
 
-.frame-image img { 
+.frame-image img {
     display: block;
     margin-bottom: 5px;
-    width: 100%;
-    height: auto;
-    border-radius: 50%; /* Makes the image oval-shaped */
-    border: 3px solid rgba(0, 0, 0, 0.2); /* Adds a subtle oval frame */
+    width: 100%; /* Ensure the image takes up the full width of the container */
+    height: 100%; /* Set the height equal to the width */
+    border-radius: 100%; /* Creates a circular shape */
+    border: 3px solid rgba(0, 0, 0, 0.2); /* Adds a subtle circular frame */
+    object-fit: cover; /* Ensures the image maintains its aspect ratio */
     overflow: hidden; /* Ensures the image stays within the frame */
 }
+.pframe-image {
+  width: 600px;
+  height: inherit;
+  margin: 0 auto;
+  display: block; /* Center the image */
+}
+.pframe-image img {
+  display: block;
+  margin-bottom: 5px;
+  width: 100%; /* Ensure the image takes up the full width of the container */
+  height: 100%; /* Set the height equal to the width */
+  border-radius:0%; /* square shape */
+  border: 3px solid rgba(0, 0, 0, 0.2); /* Adds a subtle circular frame */
+  object-fit: cover; /* Ensures the image maintains its aspect ratio */
+  overflow: hidden; /* Ensures the image stays within the frame */
+}
+
 .resume {
   max-width: 800px; /* Limits the width to ensure the text is not too wide */
   margin: 0 auto; /* Centers the resume on the page */
@@ -102,4 +121,8 @@ p {
   margin-bottom: 10px;
   margin-left: 50px;
   color: #444;
+}
+.pdf {
+  width: 100%;
+  aspect-ratio: 4 / 3;
 }
