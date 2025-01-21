@@ -1,127 +1,222 @@
-html{
-    font-family:Avenir,Open Sans,Helvetica,sans-serif;
-    background: white;
-    color:rgb(0, 0, 0,.8);
-    font-size: 15px;
-    font-weight: 300;
-    margin: 0;
-    padding: 0;
-    background-color: whitesmoke;
-  }
-h1{
-    text-align: center;
-    font-weight: 500;
-    font-size: 2.4em;
+/* General HTML and Body Styling */
+html {
+  font-family: Avenir, Open Sans, Helvetica, sans-serif;
+  background: whitesmoke;
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 15px;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
 }
-h2{
-    text-align: center;
-    font-weight: 500;
-    font-size: 2em;
-}
-h3{
-    text-align: center;
-    font-weight: 500;
-    font-size: 1.9em;
-}
-h4{
-    text-align: center;
-    font-weight: 500;
-    font-size: 1.75em;
-}
-nav {
-    height: auto;
-    flex: 100%;
-    display: flex;
-    background-color: rgb(29, 89, 82);
-    position: sticky;
-    top:0;
-}
-  
-  nav ul {
-    padding: 0;
-    list-style-type: none;
-    flex: 2;
-    display: flex;
-  }
-  
-  nav li {
-    display: inline;
-    text-align: center;
-    flex: 1;
-  }
-    p{
-        text-align: center;
-        font-size: 1.4em;
-    }
-nav a, nav span {
-    display: inline-block;
-    font-size: 2vw;
-    text-decoration: none;
-    color: white;
-    text-transform: uppercase;
-    font-weight: 300;
-    font-size: 1.8em;  
-  }
-  nav a:hover{
-    color: rgb(185, 202, 200);
-}
-p {
-    width: 80%; /* 3/5th is 60% */
-    margin: 0 auto; /* Centers the text horizontally */
-    text-align: center; /* Optional: centers the text inside the element */
-    padding: 20px;
-  }
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+  text-align: center;
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 2.4em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.9em;
+}
+
+h4 {
+  font-size: 1.75em;
+}
+
+/* Paragraph Styling */
+p {
+  font-size: 1.4em;
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Navigation Bar */
+nav {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(29, 89, 82);
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 70%;
+  display: flex;
+}
+
+nav li {
+  position: relative; /* Required for dropdown positioning */
+  text-align: center;
+  flex: 1; /* Ensures equal-width menu items */
+}
+
+nav a {
+  display: block;
+  font-size: 1.8em;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  padding: 14px 16px;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: rgb(185, 202, 200);
+}
+
+/* Dropdown Menu */
+.dropdown-content {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 100%; /* Align dropdown below parent */
+  left: 0;
+  background-color: rgb(29, 89, 82); /* Same as navbar */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  z-index: 10;
+  min-width: 150px;
+  padding: 0;
+}
+
+.dropdown-content li {
+  list-style: none; /* Remove default list style */
+}
+
+.dropdown-content a {
+  padding: 10px 15px;
+  color: white; /* Text color */
+  text-decoration: none;
+  text-align: left;
+  font-size: 1em;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: rgb(185, 202, 200); /* Hover background */
+  color: rgb(29, 89, 82); /* Hover text color */
+}
+
+/* Show only immediate dropdown on hover */
+.dropdown:hover > .dropdown-content {
+  display: block; /* Show primary dropdown */
+}
+
+/* Secondary Dropdown (Appears to the right) */
+.secondary-dropdown {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 0; /* Align with parent item vertically */
+  left: 100%; /* Position to the right of the parent item */
+  background-color: rgb(29, 89, 82);
+  min-width: 150px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  z-index: 10;
+}
+
+/* Show secondary dropdown when hovering over its parent */
+.dropdown-content > .dropdown:hover > .secondary-dropdown {
+  display: block; /* Reveal the secondary dropdown */
+}
+
+/* Tertiary Dropdown (Appears to the right of secondary) */
+.tertiary-dropdown {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 0; /* Align with parent item vertically */
+  left: 100%; /* Position to the right of the secondary dropdown */
+  background-color: rgb(29, 89, 82);
+  min-width: 150px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  z-index: 10;
+}
+
+/* Show tertiary dropdown when hovering over its parent */
+.secondary-dropdown > .dropdown:hover > .tertiary-dropdown {
+  display: block; /* Reveal the tertiary dropdown */
+}
+
+/* Ensure hover items don't overlap */
+.dropdown-content li {
+  position: relative;
+}
+
+/* Active Link Styling */
+nav a.active {
+  background-color: rgba(29, 89, 82, 0.705);
+  color: white;
+  border-radius: 4px;
+}
+
+/* Resume Section */
+.resume {
+  max-width: 800px;
+  margin: 20px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.resume h2, .resume h3, .resume h4 {
+  text-align: left;
+  margin: 20px 0 10px 50px;
+  color: #444;
+}
+
+/* Image Frames */
 .frame-image {
-    width: 350px;
-    height: 350px;
-    margin: 0 auto;
-    display: block; /* Center the image */
+  width: 350px;
+  height: 350px;
+  margin: 0 auto;
+  display: block;
 }
 
 .frame-image img {
-    display: block;
-    margin-bottom: 5px;
-    width: 100%; /* Ensure the image takes up the full width of the container */
-    height: 100%; /* Set the height equal to the width */
-    border-radius: 100%; /* Creates a circular shape */
-    border: 3px solid rgba(0, 0, 0, 0.2); /* Adds a subtle circular frame */
-    object-fit: cover; /* Ensures the image maintains its aspect ratio */
-    overflow: hidden; /* Ensures the image stays within the frame */
-}
-.pframe-image {
-  width: 600px;
-  height: inherit;
-  margin: 0 auto;
-  display: block; /* Center the image */
-}
-.pframe-image img {
-  display: block;
-  margin-bottom: 5px;
-  width: 100%; /* Ensure the image takes up the full width of the container */
-  height: 100%; /* Set the height equal to the width */
-  border-radius:0%; /* square shape */
-  border: 3px solid rgba(0, 0, 0, 0.2); /* Adds a subtle circular frame */
-  object-fit: cover; /* Ensures the image maintains its aspect ratio */
-  overflow: hidden; /* Ensures the image stays within the frame */
+  width: 100%;
+  height: 100%;
+  border-radius: 50%; /* Circular images */
+  border: 3px solid rgba(0, 0, 0, 0.2);
+  object-fit: cover;
+  overflow: hidden;
 }
 
-.resume {
-  max-width: 800px; /* Limits the width to ensure the text is not too wide */
-  margin: 0 auto; /* Centers the resume on the page */
-  background: #fff;
-  padding: 20px;
-  border-radius: 8px; /* Gives slight rounded corners */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
-  text-align: left;
+.pframe-image {
+  width: 600px;
+  margin: 0 auto;
+  display: block;
 }
-.resume h2, .resume h3, .resume h4 {
-  text-align: left; /* Left-aligns the headings inside the resume */
-  margin-top: 20px;
-  margin-bottom: 10px;
-  margin-left: 50px;
-  color: #444;
+
+.pframe-image img {
+  width: 100%;
+  border-radius: 0%; /* Square images */
+  border: 3px solid rgba(0, 0, 0, 0.2);
+  object-fit: cover;
+  overflow: hidden;
 }
+
+/* PDF Embed */
 .pdf {
   width: 100%;
   aspect-ratio: 4 / 3;
