@@ -3,15 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href= "style.css" rel="stylesheet">
-    <title>David LaPaglia</title>
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>David LaPaglia - Data Scientist</title>
 </head>
 <body>
-    <!---- <img src="images/monogram.png" >-->
-    <h1>David LaPaglia</h1>
-    <h2>Data + Information Scientist</h2>
-
-
     <nav id="nav">
         <ul>
             <li><a href="index.html" class="active">Home</a></li>
@@ -37,19 +33,114 @@
             <li><a href="resume.html">My Resumé</a></li>
         </ul>
     </nav>
-    
 
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <div class="frame-image">
+                    <figure>
+                        <img src="images/david.png" alt="David LaPaglia - Data Scientist">
+                    </figure>
+                </div>
+                <h2>Data + Information Scientist</h2>
+                <p class="hero-text">Hi, I'm David! Explore my journey in Data and Information Science!</p>
+            </div>
+        </section>
 
-    
-    <h4>Hi, I'm David! Explore my journey in Data and Information Science!</h4>
+        <section class="about" id="about">
+            <div class="content">
+                <h3>About Me</h3>
+                <p>I will be graduating from the University of Colorado Boulder in May 2025 with a Bachelor of Science in Information Science as well as minors in Business and Chinese.</p>
+                <p>As I transition into the professional world, I look forward to finding ways to apply machine learning and natural language processing techniques to yield actionable data-driven insights.</p>
+            </div>
+        </section>
 
+        <section class="skills" id="skills">
+            <div class="container">
+                <h3>Technical Skills</h3>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Programming</h4>
+                        <ul>
+                            <li><i class="fab fa-python"></i> Python</li>
+                            <li><i class="fas fa-database"></i> SQL</li>
+                            <li><i class="fas fa-chart-line"></i> R</li>
+                            <li><i class="fab fa-html5"></i> HTML</li>
+                            <li><i class="fab fa-css3-alt"></i> CSS</li>
+                            <li><i class="fab fa-js"></i> JavaScript</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Data Science</h4>
+                        <ul>
+                            <li><i class="fas fa-brain"></i> Machine Learning</li>
+                            <li><i class="fas fa-network-wired"></i> Neural Networks</li>
+                            <li><i class="fas fa-comment-dots"></i> NLP</li>
+                            <li><i class="fas fa-chart-bar"></i> Data Visualization</li>
+                            <li><i class="fas fa-chart-pie"></i> Analytics</li>
+                            <li><i class="fas fa-square-root-alt"></i> Linear Algebra</li>
+                            <li><i class="fas fa-chart-line"></i> Statistics</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Tools & Technologies</h4>
+                        <ul>
+                            <li><i class="fas fa-chart-column"></i> PowerBI</li>
+                            <li><i class="fas fa-chart-area"></i> Tableau</li>
+                            <li><i class="fas fa-terminal"></i> Command Line</li>
+                            <li><i class="fas fa-file-excel"></i> Excel</li>
+                            <li><i class="fas fa-database"></i> DB Browser for SQLite</li>
+                            <li><i class="fas fa-pencil-ruler"></i> Figma</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <div class="resume">
-    <div class="frame-image"> <figure> <img src="images/david.png">  </figure> </div>
-    <p>I will be graduating from the University of Colorado Boulder in May 2025 with a Bachelor of Science in Information Science as well as minors in Business and Chinese.</p>
-    <p> As I transition into the professional world, I look forward to finding ways to apply machine learning and natural languge processing techniques to yield actionable data-driven insights.</p>
+        <section class="featured-projects" id="projects">
+            <div class="container">
+                <h3>Featured Projects</h3>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="images/sustainability.jpg" alt="Sustainability Analysis Project">
+                        </div>
+                        <div class="project-content">
+                            <h4>Sustainability Analysis</h4>
+                            <p>Text mining analysis of sustainability reports and environmental data.</p>
+                            <div class="project-tags">
+                                <span>Python</span>
+                                <span>NLP</span>
+                                <span>Data Analysis</span>
+                            </div>
+                            <a href="sustainabilityanalysis.html" class="project-link">Learn More</a>
+                        </div>
+                    </div>
+                    <!-- Add more project cards as needed -->
+                </div>
+            </div>
+        </section>
+    </main>
 
-    </div>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="social-links">
+                    <a href="https://github.com/David-LaPaglia/Projects" target="_blank" class="social-icon">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/david-lapaglia/" target="_blank" class="social-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:david.lapaglia@colorado.edu" class="social-icon">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                <p>&copy; 2025 David LaPaglia. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
