@@ -178,7 +178,24 @@ Naturalnews                  0       0   0         0             0          0
         <li>Dataframes: Data exploration and analysis</li>
     </ul>
 
-    
+    <h5>Web Scraped TFIDF:</h5>
+    <p>After I gathered URLs from the NEWSAPI I Programmatically scraped content from the sites - then I made a TFIDF sparse matrix out of that newly created corpus.</p>
+    <img src="images/tfidf.png" class="project-image">
+
+    <h5>NewsAPI Data Deliverable</h5>
+    <p>I did two queries with the News api to get the data that I collected. This then turned into two seperate dataframes that were vecotrized. One datafram is of vectorized data from the query "air pollution" and the other the term "climate change".</p>
+    <h6>Climate Change Data</h6>
+    <img src="images/news_api_climate_change.png" class="project-image">
+    <h6>Air Pollution Data</h6>
+    <img src="images/news_api_air_pollution.png" class="project-image">
+
+    <h3> Key Data Processing Function</h3>
+    <p>This function would be plugged right into the vecotorizer objects to systemattically clean and process the data!</p>
+    <img src="images/data_clean_function.png" class="project-image">
+    <p>This was implemented into the vectorizer objects from scikit learn to process the data before it vectorized the words. I needed stemming and lemmitization to occur and found it conveinvent that we can implement it right into the object.</p>
+
+    <h5>Next Steps</h5>
+    <p>With the data collection and processing pipeline in place, stay tuned for the next steps -> topics include: Exploratory Data Analysis, Sentiment Analysis, and even experimenting with some basic ML models to contextualize this data. We've collected this data, now we have to synthesize them.</p>    
 </div>
 
     <footer>
