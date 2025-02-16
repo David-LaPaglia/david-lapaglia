@@ -7,12 +7,11 @@
     <title>David LaPaglia</title>
 </head>
 <body>
-    <h2>Data + Information Scientist</h2>
     
 
 <nav id="nav">
     <ul>
-        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About Me</a></li>
         <li class="dropdown">
             <a href="projects.html">Projects</a>
@@ -35,11 +34,149 @@
         <li><a href="resume.html">My Resumé</a></li>
     </ul>
 </nav>
+<h1> .</h1>
 <div class="content">
-    <h3>An Analysis of words on Air Quality</h3>
+    <h3>Is climate change a threat to our future?</h3>
+    <h4>Data</h4>
     <h4>Module 1</h4>
-    <p>Coming soon!</p>
-    <p>The data that I collected.</p>
+    <p>To gather data, I used 'three' sort of sources. The reddit api wrapper, or PRAW, to scrape data from reddit, NEWSAPI to scrape data from news sources, and BeautifulSoup for detailed article content extraction.</p>
+
+    <h4>News API Data Collection</h4>
+    <p>The News API provided a structured way to gather climate-related news articles. Here's how I approached it:</p>
+    <ul>
+        <li>Used endpoints like <code>https://newsapi.org/v2/everything?q=bitcoin</code> with appropriate API keys</li>
+        <li>Collected raw JSON data including article metadata, URLs, and preview content</li>
+        <li>Implemented BeautifulSoup to extract full article content from the provided URLs</li>
+    </ul>
+
+    <h4>Data Processing Pipeline</h4>
+    <p>The data collection and processing pipeline involved several sophisticated steps to ensure data quality and usability:</p>
+
+    <h5>1. Initial Data Collection</h5>
+    <p>The raw data from multiple sources required different handling approaches:</p>
+    <div class="data-comparison">
+        <div class="before-data">
+            <h5>NewsAPI Call:</h5>
+            <pre>
+topic = 'air pollution'
+URLPost = {
+    'apiKey':n_creds['api_key'],
+    'source': 'bbc-news',
+    'pageSize': 100,
+    'totalRequests': 100,
+    'q':'air pollution'}
+req = requests.get('https://newsapi.org/v2/everything', params=URLPost)
+            </pre>
+            <p>After this, I get a JSON sructure dataset with the following format:</p>
+            <h5>Before Processing:</h5>
+            <p>Raw JSON data included mixed content types, null values, and nested structures like:</p>
+            <pre>
+{
+"status": "ok",
+"totalResults": 14185,
+"articles": [
+    {
+        "source": {
+            "id": null,
+            "name": "Yahoo Entertainment"
+        },
+        "author": "Anna Washenko",
+        "title": "Climate change increased the odds of Los Angeles' devastating fires...",
+        "description": "As Los Angeles reels from the loss of lives and homes to the...",
+        "url": "https://consent.yahoo.com/v2/...d7326db44fc0",
+        "urlToImage": null,
+        "publishedAt": "2025-01-29T21:16:52Z",
+        "content": "If you click 'Accept all', we and our partners, ...[+703 chars]"
+    },
+            </pre>
+        </div>
+        <div class="after-data">
+            <h5>After Processing:</h5>
+            <p>Cleaned and vectorized data with standardized format:</p>
+            <pre>
+                        ability  abuses  ac  academic  accelerating  according  \
+Android_Authority            0       0   8         0             0          0   
+The_Times_of_India           0       0   0         0             0          0   
+Nist                         0       0   0         0             0          0   
+Vox                          0       0   0         0             0          0   
+Naturalnews                  0       0   0         0             0          0   
+            </pre>
+            <p>This is a snippet of the same corpus from the JSON data above. The processing pipeline follows these steps:</p>
+            <ol>
+                <li>Data Collection: JSON format data gathered from news sources</li>
+                <li>Text Extraction: Programmatically converted into a corpus of .txt files, organized by news source</li>
+                <li>Preprocessing:
+                    <ul>
+                        <li>Removal of HTML tags and special characters</li>
+                        <li>Tokenization of text into individual words</li>
+                        <li>Removal of stop words and rare terms</li>
+                        <li>Lemmatization to reduce words to their base form</li>
+                    </ul>
+                </li>
+                <li>Vectorization: Implementation of both Count Vectorizer and TF-IDF Vectorizer to create sparse matrices</li>
+            </ol>
+            
+            <p>The TF-IDF (Term Frequency-Inverse Document Frequency) vectorizer was particularly crucial as it:</p>
+            <ul>
+                <li>Normalizes word frequencies across documents</li>
+                <li>Assigns higher weights to terms that are unique to specific documents</li>
+                <li>Reduces the impact of common words that appear across many documents</li>
+                <li>Creates a more nuanced representation of document importance</li>
+            </ul>
+        </div>
+    </div>
+
+    <h4>Reddit Data Collection</h4>
+    <p>For Reddit data collection, I utilized PRAW (Python Reddit API Wrapper). An example of the data structure is as follows:</p>
+    <img src="images/unclean_data1.png" class="project-image">
+    <p>When using PRAW I created a seperate python file to contain a majority of my python reddit helper functions. That 
+        is what is called, pythonHelperFunctions.py in this case. This file was imported into my main python file.
+        There were two majors functions I wrote to gather data from reddit, one to get comments from a specific subreddit, useful for 
+        gathering labeled data soley from a specific subreddit. The other fucntion was useful to 
+        search through all the subreddits based on specicif search term - this is what I used for the majority later 
+        on in the project.
+    </p>
+    <img src='images/function1.png' class="project-image">
+    <p>and</p>
+    <img src='images/function2.png' class="project-image">
+    <p>It was important to account for no text because in cases of empty returns it would break my code when I was trying to dump no data into a json.</p>
+    <p>The JSON data structures from both News API and Reddit were semi-structured, presenting unique challenges in data cleaning and standardization. Each source required specific handling:</p>
+    <ul>
+        <li>News API data needed URL validation and content extraction</li>
+        <li>Reddit data required handling of deleted comments and varying content lengths</li>
+        <li>Both sources needed consistent date formatting and text normalization</li>
+    </ul>
+
+    <h4>Data Quality Assurance and Challenges</h4>
+    <p>To ensure data quality and replicability, I implemented several validation steps and addressed various challenges:</p>
+    
+    <h5>Data Validation Steps:</h5>
+    <ul>
+        <li>Automated error handling for API rate limits and connection issues</li>
+        <li>Data completeness checks before JSON storage</li>
+        <li>Consistent text encoding and special character handling</li>
+        <li>Detailed logging of data collection and processing steps</li>
+        <li>Validation of data for integrity and consistency</li>
+        <li>Filtering of non-Latin alphabet characters</li>
+    </ul>
+
+    <h5>Technical Challenges Addressed:</h5>
+    <ul>
+        <li>API Rate Limiting: Implemented exponential backoff strategy for API requests</li>
+        <li>...[int+] Characters Remaining | Much of the API didn't return the stories of the query</li>
+        <li>Data Consistency:Developed robust error handling for missing or malformed data</li>
+        <li>Text Encoding: Standardized UTF-8 encoding across all sources</li>
+        <li>Memory Management: Implemented batch processing for large datasets</li>
+    </ul>
+
+    <h5>Data Visualization and Analysis:</h5>
+    <p>To better understand the collected data:</p>
+    <ul>
+        <li>Word Clouds: Visual representation of term frequency across sources</li>
+        <li>Dataframes: Data exploration and analysis</li>
+    </ul>
+
+    
 </div>
 
     <footer>
