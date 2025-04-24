@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>David LaPaglia</title>
+</head>
+<body>
+
+
+
+<nav id="nav">
+    <ul>
+        <li><a href="index.html" >Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li class="dropdown">
+            <a href="projects.html">Projects</a>
+            <ul class="dropdown-content">
+                <li><a href="projects.html">All Projects</a></li>
+                <li class="dropdown">
+                    <a href="textmining.html">Text Mining Projects</a>
+                    <ul class="dropdown-content secondary-dropdown">
+                        <li class="dropdown">
+                            <a href="sustainabilityanalysis.html">Sustainability Analysis</a>
+                            <ul class="dropdown-content tertiary-dropdown">
+                                <li><a href="sustain_intro.html">Introduction</a></li>
+                                <li><a href="sustain_data.html">Data</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><a href="resume.html">My Resumé</a></li>
+    </ul>
+</nav>
+
+<div class="content">
+    <h2>Decision Tree</h2>
+    
+    <section class="project-overview">
+        <div>
+
+            <h3>Decision Trees</h3>
+            <p>Decision Trees are a type of supervised learning algorithm used for classification and regression tasks. They work by recursively splitting the data into subsets based on the value of input features, creating a tree-like structure.</p>
+            <p>Decision Trees are easy to interpret and visualize, making them a popular choice for many applications. However, they can be prone to overfitting, especially when the tree is deep. (i.e. in this example)</p>
+            <p>Random Forests are an ensemble learning method that combines multiple decision trees to improve classification accuracy and reduce overfitting. Each tree in the forest is trained on a random subset of the data, and the final prediction is made by aggregating the predictions of all trees.</p>
+
+            <p>The data that we are using is the same here, this is good for reproducibility and allows for a comparison between multiple different algorithms and see more clearly how they perform.</p>
+            <h4>Iris Dataset Decision Tree for Sanity Check</h4>
+            <p>Here is an example of how a decision tree looks:</p>
+            <img src="images/dt/output.png" alt="Decision Tree Example" style="width: 100%; height: auto;">
+            <p>For the above picture I am using the very popular iris dataset to show that Decision Tree does work, when the data is <i>*pefectly*</i> made for algorithm:</p>
+            <p>Enjoy what a perfect confusion matrix looks like on data that is not commonly found in nature:</p>
+            <img src="images/dt/Screenshot 2025-04-23 at 10.44.58 PM.png" alt="Iris Confusion Matrix" style="width: 100%; height: auto;">
+            <p>Its nice when we get 100% accuracies, huh!</p>
+            <h4>Back to climate-related text data!</h4>
+            <p>Here is an example of how my cm looks:</p>
+            <img src="images/dt/Screenshot 2025-04-23 at 10.47.49 PM.png" alt="Decision Tree Confusion Matrix" style="width: 100%; height: auto;">
+            <p>A whopping 7% accraucy, only for one class too. Keep in mind this data is 100% balanced.</p>
+            <p>Feature Importance:</p>
+            <img src="images/dt/Screenshot 2025-04-23 at 10.50.38 PM.png" alt="Feature Importance" style="width: 30%; height: auto;">
+            <p>This is interesting! We are getting politics, ("politics","desantis") religeon, science ("noaa", "graph") and a plethora of other interesting words used as the feature importance.</p>
+            <p>It is interesting to see that the model is picking up on these words, but it is not able to make a good prediction. This is likely due to the complexity of the data and the limitations of the decision tree algorithm.</p>
+            <p>Overfitted, not accurate decisison tree:</p>
+            <img src="images/dt/Screenshot 2025-04-23 at 10.55.37 PM.png" alt="Overfitted Decision Tree" style="width: 100%; height: auto;">
+            <p>In conclusion, Decision Trees are a powerful tool for classification tasks, but they can be sensitive to the data and may not always perform well on complex datasets. In this case, the model was not able to make accurate predictions on the climate-related text data.</p>
+            <p>look at my code and data collected on my github here:</p>
+            <a href="https://github.com/David-LaPaglia/Projects/tree/main/text-mining/text_mining-3/text_mining-3">GitHub Code</a></p>
+        </div>
+    </section>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>David LaPaglia</title>
+</head>
+<body>
+
+
+
+<nav id="nav">
+    <ul>
+        <li><a href="index.html" >Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li class="dropdown">
+            <a href="projects.html">Projects</a>
+            <ul class="dropdown-content">
+                <li><a href="projects.html">All Projects</a></li>
+                <li class="dropdown">
+                    <a href="textmining.html">Text Mining Projects</a>
+                    <ul class="dropdown-content secondary-dropdown">
+                        <li class="dropdown">
+                            <a href="sustainabilityanalysis.html">Sustainability Analysis</a>
+                            <ul class="dropdown-content tertiary-dropdown">
+                                <li><a href="sustain_intro.html">Introduction</a></li>
+                                <li><a href="sustain_data.html">Data</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><a href="resume.html">My Resumé</a></li>
+    </ul>
+</nav>
+
+<div class="content">
+    <h2>Support Vector Machine</h2>
+    
+    <section class="project-overview">
+        <div>
+            <h3>Support Vector Machine</h3>
+            <p>Support Vector Machines (SVMs) are supervised learning models used for classification and regression tasks. They work by finding the optimal hyperplane that separates data points of different classes in a high-dimensional space.</p>
+            <p>SVMs are particularly effective in high-dimensional spaces and are robust to overfitting, especially in cases where the number of dimensions exceeds the number of samples.</p>
+            <p>In this project, I used SVMs to classify climate-related text data. The SVM model was trained on the preprocessed data, and the performance was evaluated using metrics such as accuracy, precision, recall, and F1-score.</p>
+            <p>Here is an example of how my cm looks:</p>
+            <img src="images/svm/Screenshot 2025-04-23 at 11.00.51 PM.png" alt="SVM Confusion Matrix" style="width: 100%; height: auto;">
+            <p>Then I remembered my applied machine learning class where I can use sklearn's grid search cv, to find the best possible hyperparameters (those tiny settings) so I did so, and I got the best results for this module so far:  </p>
+            <img src="images/svm/Screenshot 2025-04-23 at 11.03.56 PM.png" alt="SVM Better CM" style="width: 100%; height: auto;">
+            <p>As you can see, the SVM model performed better than the Decision Tree model, and the Multinomial Naive Bayes model, but there is still room for improvement.</p>
+            <p>45% was the best accuracy I found between all my models. The differences between these two SVMs are big, one uses a linear kernel and the other a radial bias function kernel, for more dynamic data. I also decreased the regularization when I got 45% accuracy.</p>
+            <p>Despite all of this, I would argue still, that I need to review and regather more data based on more distinct labels.</p>
+
+            <h4>Sentiment Analysis:</h4>
+            <p>In addition to classification, I also performed sentiment analysis on the text data using SVMs. The goal was to determine the sentiment (positive, negative) expressed in the text related to climate change.</p>
+            <p>Sentiment analysis can provide valuable insights into public opinion and attitudes towards climate-related issues. The SVM model was trained on (manually) labeled sentiment data, and the performance was evaluated using metrics such as accuracy, precision, recall, and F1-score.</p>
+            <p>Here is an example of how my cm looks:</p>
+            <img src="images/svm/Screenshot 2025-04-23 at 11.24.05 PM.png" alt="SVM Sentiment Analysis Confusion Matrix" style="width: 100%; height: auto;">
+            <p>The issue with manually labeling data is that as a human, I carry inhernent bais. That can massively lead to analysis that isn't 100% factual.</p>
+            <img src="images/svm/Screenshot 2025-04-23 at 11.30.07 PM.png" alt="SVM Sentiment Analysis Confusion Matrix" style="width: 50%; height: auto;">
+            <p>Garbage in, garbage out. This sentiment analysis is proof of good data leading to good results and the ability for the model to learn well becomes evident.</p>
+
+            <p>look at my code and data collected on my github here:</p>
+            <a href="https://github.com/David-LaPaglia/Projects/tree/main/text-mining/text_mining-3/text_mining-3">GitHub Code</a></p>
+        </div>
+
+</html>
