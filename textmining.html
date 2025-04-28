@@ -4,14 +4,171 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet">
-    <title>David LaPaglia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js" crossorigin="anonymous"></script>
+    <title>David LaPaglia - Text Mining Projects</title>
+    <style>
+        .hero-banner {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/text-mining-banner.jpg');
+            background-color: #2C3E50; /* Fallback color */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 4rem 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .hero-banner h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-banner p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .project-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-header {
+            background-color: #3498db;
+            color: white;
+            padding: 1.5rem;
+        }
+        
+        .project-header h3 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        
+        .project-content {
+            padding: 1.5rem;
+        }
+        
+        .project-description {
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+        
+        .project-links {
+            border-top: 1px solid #eee;
+            padding-top: 1.5rem;
+        }
+        
+        .project-links h4 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            color: #333;
+        }
+        
+        .link-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        .text-link {
+            display: block;
+            padding: 0.75rem 1rem;
+            background-color: #f8f9fa;
+            border-radius: 6px;
+            color: #2980b9;
+            text-decoration: none;
+            transition: background-color 0.2s ease;
+            font-weight: 500;
+        }
+        
+        .text-link:hover {
+            background-color: #e9ecef;
+        }
+        
+        .text-link i {
+            margin-right: 0.5rem;
+        }
+        
+        .techniques-section {
+            margin-top: 3rem;
+        }
+        
+        .techniques-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .technique-card {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .technique-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .technique-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #3498db;
+        }
+        
+        .github-section {
+            margin-top: 3rem;
+            text-align: center;
+            padding: 2rem;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .github-button {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            margin-top: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        
+        .github-button:hover {
+            background-color: #000;
+        }
+        
+        .github-button i {
+            margin-right: 0.5rem;
+        }
+    </style>
 </head>
 <body>
-
-    
     <nav id="nav">
         <ul>
-            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Me</a></li>
             <li class="dropdown">
                 <a href="projects.html">Projects</a>
@@ -27,6 +184,7 @@
                                     <li><a href="sustain_data.html">Data</a></li>
                                 </ul>
                             </li>
+                            <li><a href="neural_networks.html">Neural Networks</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -34,26 +192,144 @@
             <li><a href="resume.html">My Resumé</a></li>
         </ul>
     </nav>
-    
+
+    <div class="hero-banner">
+        <h1>Text Mining & Natural Language Processing</h1>
+        <p>Exploring the power of computational linguistics and text analysis to extract insights from unstructured data</p>
+    </div>
 
     <div class="content">
-        <section id="text-mining-projects">
-            <h2>Text Mining Projects</h2>
-            <p>Welcome to the text mining projects subpage. Here, you will find a list of my projects related to my text mining class.</p>
-            <ul>
-                <h4>Project: An analysis of the speach used online about Climate.</h4>
+        <section id="text-mining-overview">
+            <h2>Text Mining Research</h2>
+            <p>Welcome to my text mining research portfolio. Through these projects, I've explored various techniques for extracting meaningful patterns and insights from text data, with a focus on environmental discourse analysis and climate change communications.</p>
+            
+            <p>Text mining combines techniques from natural language processing, machine learning, statistics, and data visualization to discover hidden patterns and relationships in unstructured text. My projects demonstrate the application of these techniques to real-world datasets and research questions.</p>
+        </section>
 
-                <div class="project-card slide-up animate">
-                <h4><a href="sustain_intro.html">Introduction</a></h4>
-                <h4><a href="sustain_data.html">Data</a></h4>
-                <h4><a href="sustainabilityanalysis.html">Machine Learning for Discovery (Clustering, LDA, ARM)</a></h4>
-                <h4><a href="supervised_learning.html">Machine Learning for Classification (Naive Bayes, Decision Tree, Support Vector Machine)</a></h4>
-               
-
+        <section id="featured-project">
+            <h2>Featured Project: Climate Change Discourse Analysis</h2>
+            
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Sustainability Text Analysis</h3>
+                    </div>
+                    <div class="project-content">
+                        <p class="project-description">This comprehensive analysis explores public discourse and scientific understanding of climate change through advanced text mining techniques. By analyzing diverse data sources, including social media discussions, scientific publications, and news articles, this project uncovers patterns in how different communities perceive and discuss climate-related issues.</p>
+                        
+                        <div class="project-links">
+                            <h4>Project Components</h4>
+                            <div class="link-grid">
+                                <a href="sustain_intro.html" class="text-link">
+                                    <i class="fas fa-info-circle"></i> Introduction
+                                </a>
+                                <a href="sustain_data.html" class="text-link">
+                                    <i class="fas fa-database"></i> Data Collection
+                                </a>
+                                <a href="sustainabilityanalysis.html" class="text-link">
+                                    <i class="fas fa-project-diagram"></i> Full Analysis
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!-- Add more projects as needed -->
-            </ul>
+                
+                <div class="project-card">
+                    <div class="project-header" style="background-color: #2980b9;">
+                        <h3>Neural Networks for NLP</h3>
+                    </div>
+                    <div class="project-content">
+                        <p class="project-description">This project explores how different neural network architectures can be applied to extract meaningful insights from textual data, with applications in environmental discourse analysis. Neural networks have revolutionized natural language processing, enabling unprecedented accuracy in tasks like text classification, sentiment analysis, and language generation.</p>
+                        
+                        <div class="project-links">
+                            <h4>Explore</h4>
+                            <div class="link-grid">
+                                <a href="neural_networks.html" class="text-link">
+                                    <i class="fas fa-brain"></i> Neural Networks
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="techniques-section">
+            <h2>Text Mining Techniques</h2>
+            <p>My research employs a variety of computational methods to analyze text data. Each technique offers unique insights into the structure, content, and meaning of text.</p>
+            
+            <div class="techniques-grid">
+                <div class="technique-card">
+                    <div class="technique-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>Unsupervised Learning</h3>
+                    <p>Discovering hidden patterns and structures in text without labeled data</p>
+                    <a href="clustering.html" class="text-link">Clustering</a>
+                    <a href="lda.html" class="text-link">Topic Modeling (LDA)</a>
+                    <a href="arm.html" class="text-link">Association Rule Mining</a>
+                </div>
+                
+                <div class="technique-card">
+                    <div class="technique-icon">
+                        <i class="fas fa-tag"></i>
+                    </div>
+                    <h3>Supervised Learning</h3>
+                    <p>Classifying text into predefined categories using labeled training data</p>
+                    <a href="supervised_learning.html" class="text-link">Classification Overview</a>
+                    <a href="naive_bayes.html" class="text-link">Naive Bayes</a>
+                    <a href="dt.html" class="text-link">Decision Trees</a>
+                    <a href="svm.html" class="text-link">Support Vector Machines</a>
+                </div>
+                
+                <div class="technique-card">
+                    <div class="technique-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Neural Networks</h3>
+                    <p>Deep learning approaches for complex language understanding tasks</p>
+                    <a href="neural_networks.html" class="text-link">Neural Network Models</a>
+                </div>
+                
+                <div class="technique-card">
+                    <div class="technique-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Visualizations</h3>
+                    <p>Graphical representation of text data and analysis results</p>
+                    <a href="lda_visualization.html" class="text-link">LDA Visualization</a>
+                </div>
+            </div>
+        </section>
+        
+        <section class="github-section">
+            <h2>Explore the Code</h2>
+            <p>All code, datasets, and detailed documentation for these text mining projects are available in my GitHub repository. Feel free to explore, fork, or contribute to these projects.</p>
+            <a href="https://github.com/David-LaPaglia/Projects/tree/main/text-mining" class="github-button" target="_blank">
+                <i class="fab fa-github"></i> View on GitHub
+            </a>
         </section>
     </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="social-links">
+                    <a href="https://github.com/David-LaPaglia/Projects" target="_blank" class="social-icon">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/david-lapaglia/" target="_blank" class="social-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:david.lapaglia@colorado.edu" class="social-icon">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                <p>&copy; 2025 David LaPaglia. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

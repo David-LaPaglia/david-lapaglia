@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>David LaPaglia</title>
+</head>
+<body>
+
+
+
+<nav id="nav">
+    <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li class="dropdown">
+            <a href="projects.html">Projects</a>
+            <ul class="dropdown-content">
+                <li><a href="projects.html">All Projects</a></li>
+                <li class="dropdown">
+                    <a href="textmining.html">Text Mining Projects</a>
+                    <ul class="dropdown-content secondary-dropdown">
+                        <li class="dropdown">
+                            <a href="sustainabilityanalysis.html">Sustainability Analysis</a>
+                            <ul class="dropdown-content tertiary-dropdown">
+                                <li><a href="sustain_intro.html">Introduction</a></li>
+                                <li><a href="sustain_data.html">Data</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><a href="resume.html">My Resumé</a></li>
+    </ul>
+</nav>
+
+<div class="content">
+    <h2>Association Rule Mining</h2>
+    
+    <section class="project-overview">
+    <div>
+        <h3>Association Rule Mining</h3>
+        <p>Association rule mining is a data mining technique used to discover interesting relationships or patterns among a set of items in large datasets. It is commonly used in market basket analysis, where the goal is to identify sets of products that frequently co-occur in transactions.</p>
+    </div>
+    <section>
+        <div>
+            <h3>Data Formatting for Association Rule Mining</h3>
+            <p>To perform association rule mining, the data must be formatted into a transaction format. Each transaction is represented as a list of items, and the dataset is typically stored in a binary matrix format where rows represent transactions and columns represent items.</p>
+            <p>The data that I am using is already vectorized with Scikit-Learn's Count Vectorizer.</p>
+            <p>Here is an example of how the data looks:</p>
+            <img src="images/arm/Screenshot 2025-03-30 at 5.50.36 PM.png" alt="Data Example" style="width: 100%; height: auto;">
+        </div>
+    </section>
+    <div>
+        <h3>Key Concepts</h3>
+        <ul>
+            <li><strong>Support:</strong> The support of an itemset is the proportion of transactions in the dataset that contain that itemset. It indicates how frequently the itemset appears in the dataset.</li>
+            <li><strong>Confidence:</strong> Confidence measures the likelihood of the consequent given the antecedent. It is calculated as the ratio of the support of the itemset to the support of the antecedent.</li>
+            <li><strong>Lift:</strong> Lift measures how much more likely the consequent is to occur when the antecedent is present compared to when it is absent. A lift value greater than 1 indicates a positive association between the items.</li>
+            <img src="images/lift.png" alt="Lift Data Example" style="width: 100%; height: auto;">
+        </ul>
+        <p>This was my Apriori model:</p>
+        <img src="images/arm/Screenshot 2025-03-30 at 5.54.43 PM.png" alt="Apriori Model" style="width: 100%; height: auto;">
+        <p>Minimum support and Confidence can be adjusted to find differing rules with the data set.</p>
+        <p>Originally I had way too broad settings and my model was making 51 million rules, sure enough I hit a 16GB limit and needed to find something insightful, this underscores why hyperparameter tuning is important and can drive where analysis ends up.</p>
+
+        
+    </div>
+    <div>
+        <h3>Network Graphs</h3>
+        <p>Network graphs are a powerful way to visualize the relationships between items in association rule mining. Each node represents an item, and edges represent the strength of the association between items. The thickness of the edges can indicate the strength of the association, while the color can represent different categories or types of items.</p>
+        <img src="images/100networkgraph.png" alt="Network Graph Example" style="width: 100%; height: auto;">
+        <p>Then limiting the rules to the top 15:</p>
+        <img src="images/arm/Screenshot 2025-03-30 at 5.45.27 PM.png" alt="Network Graph Example" style="width: 100%; height: auto;">
+    </div>
+    <section>
+        <h3>Thematic Connections</h2>
+        <ul>
+          <li><strong>Solar</strong> is most strongly connected to <strong>waste</strong> — a lesser-known environmental concern.</li>
+          <li><strong>Nuclear</strong> and <strong>currently</strong> frequently co-occur, reflecting current debates around nuclear energy as a climate solution.</li>
+        </ul>
+      
+        <h3>Geographic Framing</h2>
+        <ul>
+          <li><strong>India</strong> and <strong>billions</strong> form a strong bi-directional link, showing that discussions often involve <em>scale</em> — either economic or population-level impacts.</li>
+        </ul>
+      
+        <h3>Public Confidence or Doubt</h2>
+        <ul>
+          <li>Words like <strong>certain</strong> paired with <strong>green</strong> could reflect <em>certainty</em> or <em>skepticism</em> about green initiatives.</li>
+        </ul>
+      
+        <h3>Emotional or Urgent Language</h2>
+        <ul>
+          <li>Pairings like <strong>unless</strong> ⇄ <strong>city</strong> suggest conditional or urgent phrasing in climate discussions (e.g., “Unless cities act now...”).</li>
+        </ul>
+      </section>
+      
+    </section>
+</div>
+
+</body>

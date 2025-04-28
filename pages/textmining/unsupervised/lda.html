@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>David LaPaglia</title>
+</head>
+<body>
+
+
+
+<nav id="nav">
+    <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li class="dropdown">
+            <a href="projects.html">Projects</a>
+            <ul class="dropdown-content">
+                <li><a href="projects.html">All Projects</a></li>
+                <li class="dropdown">
+                    <a href="textmining.html">Text Mining Projects</a>
+                    <ul class="dropdown-content secondary-dropdown">
+                        <li class="dropdown">
+                            <a href="sustainabilityanalysis.html">Sustainability Analysis</a>
+                            <ul class="dropdown-content tertiary-dropdown">
+                                <li><a href="sustain_intro.html">Introduction</a></li>
+                                <li><a href="sustain_data.html">Data</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><a href="resume.html">My Resumé</a></li>
+    </ul>
+</nav>
+
+<div class="content">
+    <h2>Latent Dirichlet Allocation</h2>
+    
+    <section class="project-overview">
+    <div>
+        <h3>LDA</h3>
+        <p>Latent Dirichlet Allocation (LDA) is a generative probabilistic model used in natural language processing and text mining to discover (Unsupervised Machine Learning) topics (Topic Modeling) in a collection of documents. It assumes that each document is a mixture of topics, and each topic is characterized by a distribution over words.</p>
+    </div>
+    <section>
+        <h3>Data Formatting for LDA</h3>
+        <p>To perform LDA, the data must be preprocessed and formatted. This involves tokenizing the text, removing stop words, and creating a document-term matrix.</p>
+        <p>I used my favorite Vectorizer for this, CountVecotrizer from sklearn!</p>
+        <p>Here is an example of how the data looks:</p>
+        <img src="images/lda/Screenshot 2025-03-30 at 6.10.26 PM.png" alt="Data Example" style="width: 100%; height: auto;">
+        <p>Since LDA is unsupervised, I strip the labels right from them, here you can see the labels are the subreddit that I gatherred the text data!</p>
+        <img src="images/lda/Screenshot 2025-03-30 at 6.15.07 PM.png" alt="Data Example" style="width: 100%; height: auto;">
+        <img src="images/lda/Screenshot 2025-03-30 at 6.16.59 PM.png" alt="Data Example" style="width: 100%; height: auto;">
+    </section>
+    <div>
+        <h3>Analysis visualization</h3>
+        <p>After running LDA, I visualize the topics using pyLDAvis, which provides an interactive interface to explore the topics and their relationships.</p>
+        <p>Here is an example of how the data looks:</p>
+        <img src="images/lda/Screenshot 2025-03-30 at 6.38.14 PM.png" alt="Data Example" style="width: 100%; height: auto;">
+        <p> Or you can interact with it here!</p>
+        <!-- Make it a button to click on and visually appealing-->
+        <div class="button-container">
+            <a href="lda_visualization.html" class="btn-vis">
+                <i class="fas fa-chart-network"></i> Interactive Topic Visualization
+            </a>
+        </div>
+        
+        <p>Here is a sample of the topics that I found:</p>
+        <img src="images/lda/lda_topics.png" alt="Data Example" style="width: 100%; height: auto;">
+    </div>
+    <div>
+        <h3>Overall Themes</h3>
+        <section>          
+            <article>
+              <h3>Topic 1: Energy, Emissions, and Planetary Risk</h3>
+              <p><strong>Top terms:</strong> energy, nuclear, power, years, planet, world, water, earth, co2, civilization</p>
+              <p>
+                This topic accounted for <strong>over 40% of all tokens</strong>, showing how central energy debates are to climate discussions. Terms like <em>nuclear</em> and <em>power</em> point to policy-oriented conversations around solutions and tradeoffs, while words like <em>civilization</em>, <em>humans</em>, and <em>co2</em> suggest an existential framing of climate change.
+              </p>
+              <p>
+                This reflects public awareness of climate change as not just a scientific challenge, but a global, ethical, and technological one. Posts within this topic often express <strong>urgency, long-term thinking, and uncertainty about the future of the planet.</strong>
+              </p>
+            </article>
+          
+            <article>
+              <h3>Topic 3: Agriculture and Ecological Threats</h3>
+              <p><strong>Top terms:</strong> years, pesticides, bugs, farm, humans, warming, wrong, habitat, problem</p>
+              <p>
+                Topic 3 reflects concerns about the <strong>ecological and health impacts</strong> of climate change. Words like <em>pesticides</em>, <em>farm</em>, and <em>bugs</em> suggest a focus on agriculture and food systems, while terms like <em>habitat</em> and <em>warming</em> point to ecosystem degradation.
+              </p>
+              <p>
+                These discussions show how climate change is understood not only in terms of policy or weather, but also through everyday systems people depend on — such as farming and biodiversity. <strong>There is often an undertone of frustration or moral concern, reflected in words like <em>wrong</em> and <em>problem</em>.</strong>
+              </p>
+            </article>
+          </section>
+          
+    </div>
+</div>
+</body>
+</html>

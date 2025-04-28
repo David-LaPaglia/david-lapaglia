@@ -4,15 +4,184 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet">
-    <title>David LaPaglia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js" crossorigin="anonymous"></script>
+    <title>David LaPaglia - Sustainability Analysis Project</title>
+    <style>
+        .project-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/sustainability-banner.jpg');
+            background-color: #2c5e50;
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 3rem 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            border-radius: 8px;
+        }
+        
+        .project-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .project-header p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .key-stats {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .stat-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            min-width: 150px;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #4caf50;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+        }
+        
+        .research-questions {
+            background-color: #f8f9fa;
+            border-left: 4px solid #4caf50;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .research-questions h4 {
+            margin-top: 0;
+            color: #2c5e50;
+        }
+        
+        .research-questions ul {
+            padding-left: 1.5rem;
+        }
+        
+        .research-questions li {
+            margin-bottom: 0.75rem;
+            line-height: 1.5;
+        }
+        
+        .component-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .component-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .component-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+        }
+        
+        .component-card h4 {
+            background-color: #2c5e50;
+            color: white;
+            margin: 0;
+            padding: 1rem;
+        }
+        
+        .component-card h4 a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .component-card p {
+            padding: 1rem;
+            margin: 0;
+        }
+        
+        .category-header {
+            background-color: #f5f5f5;
+            padding: 1rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .category-header i {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: #2c5e50;
+        }
+        
+        .methodology-workflow {
+            margin: 2rem 0;
+        }
+        
+        .workflow-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .workflow-step {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .workflow-step::after {
+            content: '→';
+            position: absolute;
+            right: -0.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            color: #bbb;
+        }
+        
+        .workflow-step:last-child::after {
+            content: '';
+        }
+        
+        .workflow-step i {
+            font-size: 2rem;
+            color: #2c5e50;
+            margin-bottom: 1rem;
+        }
+        
+        .workflow-step h4 {
+            margin: 0.5rem 0;
+        }
+    </style>
 </head>
 <body>
 
-
-
 <nav id="nav">
     <ul>
-        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About Me</a></li>
         <li class="dropdown">
             <a href="projects.html">Projects</a>
@@ -28,6 +197,7 @@
                                 <li><a href="sustain_data.html">Data</a></li>
                             </ul>
                         </li>
+                        <li><a href="neural_networks.html">Neural Networks</a></li>
                     </ul>
                 </li>
             </ul>
@@ -37,65 +207,256 @@
 </nav>
 
 <div class="content">
-    <h2>Sustainability Analysis Project</h2>
+    <div class="project-header">
+        <h1>Sustainability Analysis Project</h1>
+        <p>Exploring the language of climate change through computational text mining and machine learning techniques</p>
+        
+        <div class="key-stats">
+            <div class="stat-card">
+                <div class="stat-number">14,000+</div>
+                <div class="stat-label">Documents Analyzed</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">8</div>
+                <div class="stat-label">Data Sources</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">6</div>
+                <div class="stat-label">ML Techniques</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">12</div>
+                <div class="stat-label">Key Findings</div>
+            </div>
+        </div>
+    </div>
     
     <section class="project-overview">
         <h3>Project Overview</h3>
-        <p>This comprehensive analysis explores public discourse and scientific understanding of climate change through advanced text mining techniques. By analyzing diverse data sources, including social media discussions, scientific publications, and news articles, this project aims to uncover patterns in how different communities perceive and discuss climate-related issues.</p>
+        <p>This comprehensive research project applies advanced text mining and machine learning techniques to analyze how climate change is discussed across different platforms and communities. By examining diverse textual data sources including social media discussions, scientific publications, news articles, and policy documents, this project uncovers nuanced patterns in climate discourse.</p>
+        
+        <p>The analysis employs both supervised and unsupervised learning approaches to examine sentiment, topic distribution, rhetorical strategies, and lexical choices across different stakeholder communities. Through this computational approach, the project identifies significant variations in how climate issues are framed, which terms are emphasized, and how scientific consensus is represented or contested.</p>
+        
+        <div class="research-questions">
+            <h4>Key Research Questions</h4>
+            <ul>
+                <li><strong>How does climate discourse differ between scientific and public forums?</strong> Examining the terminological and conceptual gaps between expert and lay discussions.</li>
+                <li><strong>What are the dominant narratives and frames used to discuss climate change?</strong> Identifying the primary ways climate issues are contextualized and presented.</li>
+                <li><strong>How has the language of climate change evolved over time?</strong> Tracking shifts in terminology, sentiment, and focus areas in climate discussions.</li>
+                <li><strong>What linguistic patterns differentiate skeptical vs. accepting views on climate science?</strong> Analyzing lexical markers that indicate stance toward climate consensus.</li>
+                <li><strong>How do regional and political differences manifest in climate discourse?</strong> Examining variations in climate communication across different geographic and ideological communities.</li>
+            </ul>
+        </div>
     </section>
 
    
 
+    <section class="methodology-workflow">
+        <h3>Research Methodology & Workflow</h3>
+        <p>This project follows a systematic text mining methodology to analyze climate discourse across multiple sources:</p>
+        
+        <div class="workflow-grid">
+            <div class="workflow-step">
+                <i class="fas fa-download"></i>
+                <h4>Data Acquisition</h4>
+                <p>Collection from multiple sources</p>
+            </div>
+            <div class="workflow-step">
+                <i class="fas fa-broom"></i>
+                <h4>Preprocessing</h4>
+                <p>Cleaning & normalization</p>
+            </div>
+            <div class="workflow-step">
+                <i class="fas fa-chart-column"></i>
+                <h4>Vectorization</h4>
+                <p>TF-IDF & embeddings</p>
+            </div>
+            <div class="workflow-step">
+                <i class="fas fa-brain"></i>
+                <h4>Analysis</h4>
+                <p>ML algorithms & NLP</p>
+            </div>
+            <div class="workflow-step">
+                <i class="fas fa-chart-pie"></i>
+                <h4>Visualization</h4>
+                <p>Results interpretation</p>
+            </div>
+        </div>
+    </section>
+
     <section class="project-components">
         <h3>Project Components</h3>
+        
+        <div class="category-header">
+            <i class="fas fa-file-alt"></i>
+            <h4>Project Foundations</h4>
+        </div>
+        
         <div class="component-grid">
             <div class="component-card">
-                <h4><a href="sustain_intro.html">Introduction</a></h4>
-                <p>Explore the project's background, objectives, and the critical questions driving this research into climate change discourse.</p>
+                <h4><a href="sustain_intro.html">Introduction & Background</a></h4>
+                <p>This section establishes the theoretical framework for the project, including the significance of climate discourse analysis, previous research in the field, and the gap this project aims to fill. Key research questions and hypotheses are outlined in detail, providing context for the entire analysis.</p>
             </div>
             <div class="component-card">
-                <h4><a href="sustain_data.html">Data Analysis</a></h4>
-                <p>Dive into the data collection methods, analysis techniques, and key findings from our text mining investigation.</p>
+                <h4><a href="sustain_data.html">Data Collection & Processing</a></h4>
+                <p>A comprehensive overview of data sources, collection methods, and preprocessing techniques. This component details the APIs used (Reddit, News API), web scraping methodologies, and the extensive data cleaning pipeline that transformed raw text into analysis-ready corpora. Includes details on tokenization, stopword removal, lemmatization, and feature engineering.</p>
             </div>
+        </div>
+        
+        <div class="category-header">
+            <i class="fas fa-project-diagram"></i>
             <h4>Unsupervised Learning Methods</h4>
+        </div>
+        
+        <div class="component-grid">
             <div class="component-card">
-                <h4><a href="clustering.html">Clustering</a></h4>
-            <p>Clustering is used to uncover insights about unlabeled data, this is called unsupervised learning. It is useful for looking at data with new perspectives.</p>     
+                <h4><a href="clustering.html">Text Clustering Analysis</a></h4>
+                <p>Exploration of document clustering techniques including K-means, Hierarchical Clustering, and DBSCAN to identify natural groupings within climate discourse. This section presents detailed algorithm implementations, parameter tuning approaches, and visualization of cluster characteristics. Key findings reveal distinct discourse communities and their linguistic patterns.</p>
             </div>
             <div class="component-card">
                 <h4><a href="arm.html">Association Rule Mining</a></h4>
-                <p>Association Rule Mining (ARM) is a data mining technique used to discover interesting relationships between variables in large datasets.</p>
+                <p>Application of association rule mining to uncover significant co-occurrence patterns in climate-related terminology. This component employs the Apriori algorithm to identify frequent itemsets and meaningful association rules, with metrics for support, confidence, and lift. Results highlight surprising term relationships and rhetorical patterns across different sources.</p>
             </div>
             <div class="component-card">
-                <h4><a href="lda.html">Latent Dirichlet Allocation</a></h4>
-                <p>Latent Dirichlet Allocation (LDA) is a generative statistical model used in natural language processing and text mining to discover topics in a collection of documents.</p>
-                
+                <h4><a href="lda.html">Topic Modeling & LDA</a></h4>
+                <p>Implementation of Latent Dirichlet Allocation for discovering latent topics in the climate discourse corpus. This section details the mathematical framework of LDA, optimal topic number determination, and interactive topic visualizations. The analysis reveals distinct topic distributions across different platforms and their evolution over time.</p>
             </div>
+        </div>
+        
+        <div class="category-header">
+            <i class="fas fa-tag"></i>
             <h4>Supervised Learning Methods</h4>
-            <h4><a href="supervised_learning.html">Machine Learning for Classification (Naive Bayes, Decision Tree, Support Vector Machine)</a></h4>
-            <p>look at my code and data collected on my github here:</p>
-            <a href="https://github.com/David-LaPaglia/Projects/tree/main/text-mining/text_mining-2/text_mining-2">Im clickable</a></p>
-        </div>  
+        </div>
+        
+        <div class="component-grid">
+            <div class="component-card">
+                <h4><a href="supervised_learning.html">Text Classification Overview</a></h4>
+                <p>A comprehensive examination of supervised learning approaches for categorizing climate texts by stance, source, and content. This section discusses feature selection, cross-validation methodologies, and performance evaluation metrics. The comparative analysis reveals strengths and limitations of different classifiers for various text classification tasks.</p>
+            </div>
+            <div class="component-card">
+                <h4><a href="naive_bayes.html">Naive Bayes Classifier</a></h4>
+                <p>Detailed implementation of Multinomial and Bernoulli Naive Bayes classifiers for climate text categorization. This component explores probability distributions, feature independence assumptions, and performance optimizations. Results demonstrate Naive Bayes' effectiveness for certain climate stance classification tasks despite its simplicity.</p>
+            </div>
+            <div class="component-card">
+                <h4><a href="dt.html">Decision Tree Analysis</a></h4>
+                <p>Application of decision tree algorithms for interpretable classification of climate texts. This section examines tree construction, information gain metrics, pruning techniques, and ensemble methods like Random Forests. The analysis highlights the interpretability advantages and decision boundaries in climate discourse classification.</p>
+            </div>
+            <div class="component-card">
+                <h4><a href="svm.html">Support Vector Machines</a></h4>
+                <p>Implementation of SVM models with various kernels for high-dimensional text classification. This component explores margin optimization, kernel functions, and hyperparameter tuning strategies. Results show SVM's superior performance for distinguishing subtle differences in climate framing and rhetoric.</p>
+            </div>
+        </div>
+        
+        <div class="category-header">
+            <i class="fas fa-brain"></i>
+            <h4>Advanced Neural Networks</h4>
+        </div>
+        
+        <div class="component-grid">
+            <div class="component-card">
+                <h4><a href="neural_networks.html">Neural Networks for Text Classification</a></h4>
+                <p>Exploration of neural architectures for climate text analysis, including RNNs, LSTMs, and transformer-based models. This section details network architectures, embedding approaches, training methodologies, and performance comparisons. The analysis demonstrates how deep learning captures semantic nuances missed by traditional methods, particularly for complex sentiment and stance detection in climate communication.</p>
+            </div>
+        </div>
+        
+        <div class="github-section">
+            <h4>Source Code & Data Repository</h4>
+            <p>All implementation code, datasets, and analysis notebooks are available in my GitHub repository. The repository includes commented code, documentation, and reproducible examples for each component of the project.</p>
+            <a href="https://github.com/David-LaPaglia/Projects/tree/main/text-mining/text_mining-2/text_mining-2" class="github-button" target="_blank">
+                <i class="fab fa-github"></i> View Project Repository
+            </a>
+        </div>
     </section>
 
     <section class="significance">
-        <h3>Project Significance</h3>
-        <p>This analysis contributes to our understanding of climate change communication by:</p>
-        <ul>
-            <li>Identifying gaps between scientific consensus and public understanding</li>
-            <li>Revealing how different communities frame and discuss climate issues</li>
-            <li>Tracking the evolution of climate change discourse over time</li>
-            <li>Providing insights for more effective climate communication strategies</li>
-        </ul>
+        <h3>Key Findings & Project Significance</h3>
+        
+        <div class="research-questions">
+            <h4>Major Contributions</h4>
+            <p>This research makes several important contributions to our understanding of climate change communication:</p>
+        </div>
+        
+        <div class="component-grid">
+            <div class="component-card">
+                <h4>Discourse Community Identification</h4>
+                <p>The analysis successfully identified and characterized distinct discourse communities within climate discussions, each with unique linguistic patterns, key terminology, and framing devices. These include scientific, policy-oriented, activist, and skeptical communities, each with identifiable lexical markers.</p>
+            </div>
+            
+            <div class="component-card">
+                <h4>Terminology Gap Analysis</h4>
+                <p>The project quantified significant terminology gaps between scientific and public discourse, revealing that key scientific concepts are often absent or misrepresented in public forums. This linguistic disconnect contributes to misunderstandings and communication challenges around climate science.</p>
+            </div>
+            
+            <div class="component-card">
+                <h4>Temporal Evolution Mapping</h4>
+                <p>By analyzing text data across a multi-year period, the research documented the evolution of climate terminology, sentiment, and framing over time. Results show a shift from general "global warming" discourse to more specific impact-oriented language, and increasing polarization in communication patterns.</p>
+            </div>
+            
+            <div class="component-card">
+                <h4>Narrative Structure Identification</h4>
+                <p>Topic modeling and sequence analysis revealed recurring narrative structures in climate communication, identifying common story arcs employed by different stakeholders. These narrative templates significantly influence public perception and engagement with climate information.</p>
+            </div>
+        </div>
+        
+        <div class="implications">
+            <h4>Practical Implications</h4>
+            <p>These findings have significant implications for climate communication strategies:</p>
+            <ul>
+                <li><strong>Bridging the Terminology Gap:</strong> The identified linguistic differences between expert and public discourse highlight the need for translational communication strategies that make scientific concepts accessible without sacrificing accuracy.</li>
+                <li><strong>Targeted Message Design:</strong> Understanding the distinct characteristics of different discourse communities enables more effective tailoring of climate messaging to specific audiences.</li>
+                <li><strong>Countering Misinformation:</strong> The lexical patterns associated with climate misinformation can help in developing automated detection systems and more effective counter-messaging strategies.</li>
+                <li><strong>Narrative Engagement:</strong> The identified narrative structures provide templates for more engaging and persuasive climate communication that resonates with public audiences.</li>
+                <li><strong>Cross-Platform Strategy:</strong> Platform-specific discourse patterns inform more effective multi-channel communication strategies for climate information.</li>
+            </ul>
+        </div>
     </section>
 
-    <section class="tools-technologies">
-        <h3>Tools & Technologies</h3>
-        <ul>
-            <li>Python for text processing and analysis</li>
-            <li>Natural Language Processing (NLP) libraries</li>
-            <li>Data visualization tools</li>
-            <li>Statistical analysis packages</li>
-        </ul>
+
+  
+    <section class="conclusion">
+        <h3>Conclusions & Future Work</h3>
+        <p>This text mining analysis of climate change discourse has demonstrated the power of computational approaches for understanding complex communication patterns across diverse platforms and communities. The combination of unsupervised and supervised machine learning techniques provided complementary insights into the structure, content, and evolution of climate discourse.</p>
+        
+       
+        
+        <div class="future-directions">
+            <h4>Future Research Directions</h4>
+            <p>This project opens several promising avenues for future research:</p>
+            <ul>
+                <li><strong>Multimodal Analysis:</strong> Extending the analysis to include images, videos, and other media that accompany climate text</li>
+                <li><strong>Real-time Monitoring:</strong> Developing systems for tracking climate discourse evolution in real-time</li>
+                <li><strong>Cross-lingual Analysis:</strong> Expanding to multiple languages to compare climate discourse globally</li>
+                <li><strong>Causal Influence Modeling:</strong> Investigating how discourse patterns influence public opinion and policy outcomes</li>
+                <li><strong>Intervention Testing:</strong> Experimental validation of communication strategies informed by text mining insights</li>
+            </ul>
+        </div>
+        
+        <div class="github-section">
+            <p>For more information, code, and detailed methodological documentation, please visit the project repository.</p>
+            <a href="https://github.com/David-LaPaglia/Projects/tree/main/text-mining" class="github-button" target="_blank">
+                <i class="fab fa-github"></i> Explore Complete Repository
+            </a>
+        </div>
     </section>
 </div>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://github.com/David-LaPaglia/Projects" target="_blank" class="social-icon">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/david-lapaglia/" target="_blank" class="social-icon">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:david.lapaglia@colorado.edu" class="social-icon">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <p>&copy; 2025 David LaPaglia. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>

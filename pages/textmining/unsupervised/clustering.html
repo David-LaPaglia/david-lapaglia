@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>David LaPaglia</title>
+</head>
+<body>
+
+
+
+<nav id="nav">
+    <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li class="dropdown">
+            <a href="projects.html">Projects</a>
+            <ul class="dropdown-content">
+                <li><a href="projects.html">All Projects</a></li>
+                <li class="dropdown">
+                    <a href="textmining.html">Text Mining Projects</a>
+                    <ul class="dropdown-content secondary-dropdown">
+                        <li class="dropdown">
+                            <a href="sustainabilityanalysis.html">Sustainability Analysis</a>
+                            <ul class="dropdown-content tertiary-dropdown">
+                                <li><a href="sustain_intro.html">Introduction</a></li>
+                                <li><a href="sustain_data.html">Data</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><a href="resume.html">My Resumé</a></li>
+    </ul>
+</nav>
+
+<div class="content">
+    <h2>Clustering</h2>
+    
+    <section class="project-overview">
+        <h3>Clustering w/ KMeans & Principal Component Analysis</h3>
+        <p>In this section, we will explore the clustering of our data using KMeans and Principal Component Analysis (PCA). The goal is to identify distinct groups within the dataset based on their characteristics.</p>
+        <p><strong>Kmeans</strong> is an unsupervised learning algorithm that partitions the data into K distinct clusters based on feature similarity. The number of clusters (K) is a parameter that we need to define before running the algorithm.</p>
+        <p>We will visualize the clusters formed by KMeans and analyze the results to understand the underlying patterns in the data.</p>
+        <p>Why does PCA have to happen in conjunction with KMeans??</p>
+        <p><strong>Principal Component Analysis (PCA)</strong> is a dimensionality reduction technique that transforms the data into a new coordinate system, where the greatest variance lies along the first coordinate (principal component), the second greatest variance along the second coordinate, and so on. This transformation helps to reduce noise and improve the performance of clustering algorithms like KMeans.</p>
+        <p>The KMeans algorithm works best in lower dimensonal space, so reducing dimensions helps kmeans perform better!</p>
+    </section>
+    <div>
+        <h3>Data Prep.</h3>
+        <p>The purpose of unsupervised ml models is to discover new things, thats why we tune hyperparametes and see what we see. Its just charting through murky data trying to learn something, or quantify something.</p>
+        <p>Unsupervised also means no labels for our data, since the data collected last time all had labels, we have to remove them to allow the model to make connections itself.</p>
+        <p>This is what the dataframe I was working with clustering looks like:</p>
+        <img src="images/clustering/Screenshot 2025-03-30 at 7.18.12 PM.png" alt="Clustering DataFrame" width="600">
+        
+    </div>
+    <div>
+        <h3>2 Components</h3>
+        <img src="images/clustering/Screenshot 2025-03-30 at 7.20.49 PM.png" alt="2 Components" width="600">
+        <p> When we compress 1000 columns and 35 rows of vectorized text data, you'd expect a major loss of information, and you'd be right.</p>
+        <img src="images/clustering/Screenshot 2025-03-30 at 7.23.41 PM.png" alt="Total Explained Variacne Rato" width="600">
+        <p> The total explained variance ratio is 0.157(15%), which means that the PCA transformation has not captured much of the original data's variance. This indicates that the data is highly complex and may require more components to accurately represent its structure.</p>
+        <p>Then, I would save the clusters as seperate CSVs and count the biggest cluster, often when working with this reddit data, one cluster would contain 80-90% of all of the data.  </p>
+        <p>Then I would take the biggest cluster and run it through more pca dimensionality reduction and another kmeans model to find more centroids and really group up the data.</p>
+        <img src = 'images/clustering/Screenshot 2025-03-30 at 7.32.10 PM.png' alt = '2nd KMeans' width = '600'>
+        <p>Here is an awesome 3D chart of the above clustered data!</p>
+        <img src = 'images/clustering/output.png' alt = '3D KMeans' width = '600'>
+        <p>If I elevate the max principal componenets to 10, I capture 51% of the total information!</p>
+        <img src = 'images/clustering/Screenshot 2025-03-30 at 8.08.24 PM.png' alt = '10 Components' width = '600'>
+        <p>Those small numbers in the <em>Explained Variance Ratio</em> section show the total information with one principal component.</p>
+
+    </div>
+    <div>
+        <h3>Mapping the subreddits!</h3>
+        <p>Dendrogram</p>
+        <img src = 'images/clustering/Screenshot 2025-03-30 at 7.55.40 PM.png' alt = 'Dendrogram' width = '600'>
+        <p>Here is a dendrogram of the clusters, this is a great way to visualize the clusters and see how they are related to each other.</p>
+        <p>It is possible to draw connections between these, forexample subreddits that look they would be on one political side seem to aggregte togehter! </p>
+        <p>Here is a t-SNE map of the clusters, this is a great way to visualize the clusters and see how they are related to each other.</p>
+        <p>t-SNE is a non linear dimensionality reduction technique!</p>
+        <img src = 'images/clustering/Screenshot 2025-03-30 at 7.56.57 PM.png' alt = 't-SNE' width = '600'>
+    </div>
+
+    <div>
+        <h3>High Dimension Text Data</h3>
+        <p><strong>Silhouette Width Growth Chart</strong>s are commmon to find where the optimal number of clusters are for a model, the problem with complicated data is that we are prone to overfitting, and some clusters just contain one subreddit post.</p>
+        <img src = "images/clustering/Screenshot 2025-03-30 at 8.04.21 PM.png" alt = "Silhouette Width Growth Chart" width = "600">
+        <h3>4 Clusters</h3>
+        <p>I wanted to make some of these clusters again using R because of Partition Around Mediods(PAM).</p>
+        <img src="images/clustering/Screenshot 2025-03-30 at 8.15.16 PM.png" alt = "4 Clusters" width = "600">
+        <p>Here is a 4 cluster model, as you can see a majority of the data falls into one cluster, similar to the pythonic charts above.
+        </p>
+        <p>If we use the insights from the Silhouette chart, (around 7 or 8 clusters we get to 90% information retention) still having micro-clusters (overfitting model)</p>
+        <img src="images/clustering/Screenshot 2025-03-30 at 8.16.56 PM.png" alt = "8 Clusters" width = "600">
+        <p>Above, there are 'clusters' that only contain one centroid, meaning that this model is overfit and the more common that is the less useful partionion the data falls into. This is common with highly complex text data, especially when falling around similar topcis.</p>
+    </div>
+    <div>
+        <h3>Conclusion</h3>
+<p>
+    Clusters formed based on shared word usage patterns — even though no subreddit labels were used in the clustering itself. For example:
+    </p>
+    
+    <ul>
+      <li>Some clusters grouped documents from politically oriented subs (e.g., <strong>climate denial vs. policy advocacy</strong>).</li>
+      <li>Others grouped around <strong>technological optimism</strong> or <strong>doomsday language</strong>.</li>
+    </ul>
+    
+
+
+    
+
+
+</body>

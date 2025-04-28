@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>David LaPaglia</title>
+</head>
+<body>
+
+
+
+<nav id="nav">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li class="dropdown">
+            <a href="projects.html">Projects</a>
+            <ul class="dropdown-content">
+                <li><a href="projects.html">All Projects</a></li>
+                <li class="dropdown">
+                    <a href="textmining.html">Text Mining Projects</a>
+                    <ul class="dropdown-content secondary-dropdown">
+                        <li class="dropdown">
+                            <a href="sustainabilityanalysis.html">Sustainability Analysis</a>
+                            <ul class="dropdown-content tertiary-dropdown">
+                                <li><a href="sustain_intro.html">Introduction</a></li>
+                                <li><a href="sustain_data.html">Data</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><a href="resume.html">My Resumé</a></li>
+    </ul>
+</nav>
+
+<div class="content">
+    <h2>Naive Bayes</h2>
+    
+    <section class="project-overview">
+        <div>
+            <h3>Naive Bayes</h3>
+            <p>Naive Bayes is a <i> family</i> of probabilistic algorithms based on Bayes' theorem, used for classification tasks. The Multinomial Naive Bayes variant is usually particularly effective for text classification, where the features are the frequencies of words in the documents.</p>
+            <p style="list-style-type: disc; margin-left: 30px;">Family!?</p>
+            <p>Yes, there are four useful, awesome, very different Naive Bayes' algorithms:</p>
+            <ul style="list-style-type: disc; margin-left: 40px;">
+                <li>Gaussian Naive Bayes: Assumes that the features follow a Gaussian (normal) distribution.</li>
+                <li>Multinomial Naive Bayes: Suitable for discrete data, such as<strong> word counts in text classification.</strong></li>
+                <li>Bernoulli Naive Bayes: Similar to Multinomial Naive Bayes but assumes binary features (presence/absence of words).</li>
+                <li>Complement Naive Bayes: A variant of Multinomial Naive Bayes that is designed to correct the "severe assumptions" made by the standard Multinomial Naive Bayes algorithm.</li>
+        </div>
+        <section>
+            <h3>Data Formatting for Naive Bayes</h3>
+            <p>To perform Naive Bayes classification, the data must be preprocessed and formatted. This involves tokenizing the text, removing stop words, and creating a document-term matrix.</p>
+            <p>I used my favorite Vectorizer for this, CountVecotrizer and Term Frequency Interdocument Frequency (TF-IDF)from sklearn!</p>
+            <p>Here is how I programmatically, relabeled and formatted my data. Originally, from the raw json I had collected in the data tab from reddit:</p>
+            <img src="images/naivebayes/code-snapshot.png" alt="Data Example" style="width: 100%; height: auto;">
+            <p>Here is an example of how the data looks:</p>
+            <img src="images/naivebayes/countvect2bigram.png"style="width: 100%; height: auto;">
+            <p>As you'll notice on the right hand-side, there are two labels climate change and conservative, these labels were determined based on what subreddit the comment or in this document-term set up, row. This means that each row in the dataframe is comment posted within that subreddit channel.</p>
+            <p>With supervised machine learning, we need to split the data up into four categories, training data, testing data, and the associated labels for both training and testing.</p>
+            <p>Here is how I did that(sklearn):</p>
+            <img src="images/naivebayes/code-snapshot1.png" alt="Data Example" style="width: 100%; height: auto;">  
+
+        </section>
+        <section>
+            <h3>Naive Bayes Classifier</h3>
+            <p>The Naive Bayes classifier is trained on the document-term matrix and the corresponding labels. The model learns the probabilities of each word given a class label, allowing it to (not really) make predictions on unseen data.</p>
+            <p>Here is my confusion matrix:</p>
+            <img src="images/naivebayes/Screenshot 2025-04-23 at 9.55.06 PM.png" alt="Model Setup" style="width: 100%; height: auto;">
+            <p>As you can see, the model is not performing well. The accuracy is low, and the confusion matrix shows that the model struggles to distinguish between the classes.</p>
+            <p>You might be wondering, how does one read a confusion matrix.</p>
+            <p>In a confusion matrix, the rows represent the true classes, while the columns represent the predicted classes. The diagonal elements indicate correct predictions, while the off-diagonal elements indicate misclassifications.</p>
+            <p>For a more in-depth reading of this try out the great Geeks for Geeks article below:</p>
+                <a href="https://www.geeksforgeeks.org/confusion-matrix-machine-learning/">Confusion Matrix - Geeks for Geeks</a>
+            <p>With my hope, not yet diminsioning, I attempted some hyperparameter tuning, or changing diminutive 'settings' with in the statistical model to tweak the way that the model responds to new data.</p>
+            <br /   >
+            <p>I trained a different multinomial naive bayes model, this time using Count Vecotrized words (as opposed to using TF-IDF) and I opted to use a Laplace smoothing parameter.</p>
+            <p>Here is my confusion matrix:</p>
+            <img src="images/naivebayes/Screenshot 2025-04-23 at 10.00.34 PM.png" alt="Model Setup" style="width: 100%; height: auto;">
+            <p>As you can see our correct, climate change for climate change integer increased by one, meaning that our accuracy increased from a whopping 12% to 15%.</p>
+            <p>I printed out the 50 most important features that were used for this multinomial naive bayes (mis)classification, here is what they look like:</p>
+            <img src="images/naivebayes/Screenshot 2025-04-23 at 10.31.37 PM.png" alt="Model Setup" style="width: 100%; height: auto;">
+            <p>These features do have to do with the topic of climate related words. Even our bigrams are coming through, I added bigrams in later that improved some of our classification because it retains a teensy bit of context for the algorithm to model. 'Climate Hoax' and 'Believe Climate' have two very different connotations, these cannot be captured in single word vectorizations.</p>
+            <p>In conclusion, the Naive Bayes classifier is a simple yet effective algorithm for text classification tasks. However, its performance can be limited by the assumptions it makes about the data. In this case, the model struggled to capture the complexities of the text data, leading to low accuracy.</p>
+            <p>In my previous experiences with Naive Bayes working with human text data, it performs really well.</p>
+            <p>look at my code and data collected on my github here:</p>
+            <a href="https://github.com/David-LaPaglia/Projects/tree/main/text-mining/text_mining-3/text_mining-3">GitHub Code</a></p>
+        </section>
+</div>
+</body>
+</html>
