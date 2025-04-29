@@ -5,6 +5,166 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet">
     <title>David LaPaglia - Neural Networks in Text Mining</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Neural Networks specific styling */
+        .step-header {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .data-prep-steps {
+            counter-reset: step-counter;
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .data-prep-steps > li {
+            position: relative;
+            background-color: rgba(185, 202, 200, 0.1);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .data-prep-steps > li::before {
+            content: counter(step-counter);
+            counter-increment: step-counter;
+            position: absolute;
+            left: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: var(--primary-color);
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .indented-list {
+            margin-left: 2rem;
+            border-left: 3px solid rgba(29, 89, 82, 0.2);
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+            list-style-type: square;
+        }
+        
+        .indented-list li {
+            margin-bottom: 0.8rem;
+        }
+        .project-overview {
+            background-color: var(--secondary-color);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+        }
+        
+        .implementation {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .implementation h4 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+            margin: 1.5rem 0 1rem 0;
+        }
+        
+        .implementation ol {
+            padding-left: 1.5rem;
+        }
+        
+        .implementation ol > li {
+            margin-bottom: 1.5rem;
+        }
+        
+        .implementation ul {
+            margin-top: 0.5rem;
+        }
+        
+        .implementation li {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            padding-left: 0.5rem;
+        }
+        
+        .implementation ul {
+            list-style-type: circle;
+            padding-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .implementation ul ul {
+            list-style-type: square;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .implementation ol > li {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px dashed var(--secondary-color);
+        }
+        
+        .implementation ol > li:last-child {
+            border-bottom: none;
+        }
+        
+        .implementation ul > li::marker {
+            color: var(--primary-color);
+        }
+        
+        .neural-architectures {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .architecture-card {
+            border: 1px solid var(--secondary-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            background-color: rgba(185, 202, 200, 0.1);
+        }
+        
+        .code-snippet {
+            background-color: #f8f8f8;
+            border-radius: 6px;
+            padding: 1rem;
+            overflow-x: auto;
+            font-family: monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .code-example {
+            margin-top: 2rem;
+        }
+        
+        code {
+            background-color: #f0f0f0;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: monospace;
+            font-size: 0.9em;
+        }
+    </style>
 </head>
 <body>
     <nav id="nav">
@@ -35,105 +195,171 @@
     </nav>
 
     <div class="content">
-        <h2>Neural Networks in Text Mining</h2>
+        <h2 style="color: var(--primary-color); text-align: center; margin-bottom: 1.5rem;">Neural Networks in Text Mining</h2>
         
         <section class="project-overview">
-            <h3>Overview: Neural Networks for NLP</h3>
-            <p>[Your overview of using neural networks for natural language processing. Include the goals of your project and how neural networks benefit text mining tasks.]</p>
+            <h3><i class="fas fa-brain"></i> Overview: Neural Networks for NLP</h3>
+            <p>A feed forward artificial neural network designed to predict sentiment analysis in climate change discourse</p>
         </section>
 
+        <section class="implementation">
+            <h3><i class="fas fa-cogs"></i> Implementation Details</h3>
+            
+            <h4><i class="fas fa-database"></i> Data Preparation</h4>
+            <p>The text data preparation involved a comprehensive multi-stage process to ensure high-quality inputs for the neural network model:</p>
+            
+            <ol class="data-prep-steps">
+                <li>
+                    <div class="step-header"><strong>Data Collection and Loading</strong></div>
+                    <ul>
+                        <li>Loaded data from multiple JSON files containing Reddit comments and news articles</li>
+                        <li>Used custom functions (<code>load_reddit_comments</code> and <code>load_news_articles</code>) to parse these files</li>
+                        <li>Created a combined corpus by concatenating data from both sources with source labels</li>
+                        <li>Initial dataset had 8,448 documents with a text field and source field (Reddit vs news)</li>
+                    </ul>
+                </li>
+                
+                <li>
+                    <div class="step-header"><strong>Automatic Labeling</strong></div>
+                    <ul>
+                        <li>Implemented a lexicon-based approach using keyword matching</li>
+                        <li>Created two sets of keywords:</li>
+                    </ul>
+                    <ul class="indented-list">
+                        <li>Positive keywords: climate, global warming, renewable, carbon neutral, sustainability, etc.</li>
+                        <li>Negative keywords: climate hoax, fake science, scam, not real, climate agenda, etc.</li>
+                    </ul>
+                    <ul>
+                        <li>Created a robust labeling function (<code>very_robust_auto_label</code>) that:</li>
+                    </ul>
+                    <ul class="indented-list">
+                        <li>Counted occurrences of positive and negative keywords in each text</li>
+                        <li>Assigned label 1 (positive) if more positive keywords than negative</li>
+                        <li>Assigned label 0 (negative) if more negative keywords than positive</li>
+                        <li>Assigned label -1 (neutral/unclear) if equal or no matches</li>
+                    </ul>
+                    <ul>
+                        <li>Initially labeled data was highly imbalanced:</li>
+                    </ul>
+                    <ul class="indented-list">
+                        <li>7,624 neutral/unclear (-1)</li>
+                        <li>763 positive (1)</li>
+                        <li>61 negative (0)</li>
+                    </ul>
+                </li>
+                
+                <li>
+                    <div class="step-header"><strong>Dataset Filtering and Balancing</strong></div>
+                    <ul>
+                        <li>Filtered out neutral/unclear documents (label -1)</li>
+                        <li>Resulting in 824 labeled documents (763 positive, 61 negative)</li>
+                        <li>Used scikit-learn's <code>resample</code> to balance the dataset:</li>
+                    </ul>
+                    <ul class="indented-list">
+                        <li>Identified majority class (positive) and minority class (negative)</li>
+                        <li>Upsampled the minority class with replacement to match majority class size</li>
+                        <li>Combined original majority samples with upsampled minority samples</li>
+                        <li>Final balanced dataset contained 763 samples of each class (1,526 total)</li>
+                    </ul>
+                    <ul>
+                        <li>Note on upsampling with replacement: Each of the 61 negative samples appears approximately 12-13 times in the final balanced dataset</li>
+                    </ul>
+                </li>
+                
+                <li>
+                    <div class="step-header"><strong>Feature Engineering</strong></div>
+                    <ul>
+                        <li>Used CountVectorizer for text representation:</li>
+                    </ul>
+                    <ul class="indented-list">
+                        <li>Removed English stop words</li>
+                        <li>Set maximum features to 10,000</li>
+                        <li>Converted to lowercase</li>
+                    </ul>
+                    <ul>
+                        <li>Transformed text into a sparse matrix of token counts</li>
+                        <li>Resulting feature matrix had shape (824, 6392) before balancing</li>
+                        <li>After balancing and applying CountVectorizer, produced properly balanced input features</li>
+                    </ul>
+                </li>
+                
+                <li>
+                    <div class="step-header"><strong>Train-Test Split</strong></div>
+                    <ul>
+                        <li>Split the balanced dataset into training and testing sets (80%/20%)</li>
+                        <li>Used stratified sampling to maintain class balance in both sets</li>
+                    </ul>
+                </li>
+            </ol>
+        </section>
+        
         <section class="neural-architectures">
-            <h3>Neural Network Architectures</h3>
+            <h3><i class="fas fa-network-wired"></i> Neural Network Architectures</h3>
             
             <div class="architecture-grid">
                 <!-- Architecture 1 -->
                 <div class="architecture-card">
-                    <h4>[Architecture Name 1]</h4>
-                    <p>[Description of this neural network architecture and how you used it in your project]</p>
-                    <!-- Uncomment when you have an image
-                    <img src="images/architecture1.png" alt="Architecture 1" class="project-image">
-                    -->
+                    <h4><i class="fas fa-project-diagram"></i> Feed-Forward Deep Neural Network</h4>
+                    <p>A multi-layer feed-forward neural network designed for sentiment analysis of climate-related text. This architecture processes text data after vectorization to classify sentiment as positive or negative.</p>
+               
                     <h5>Key Components:</h5>
                     <ul>
-                        <li>[Component 1]</li>
-                        <li>[Component 2]</li>
-                        <li>[Component 3]</li>
+                        <li>An input layer with 6392 features (from your CountVectorizer)</li>
+                        <li>A dense hidden layer with 128 neurons followed by dropout</li>
+                        <li>A second dense hidden layer with 64 neurons followed by dropout</li>
+                        <li>An output layer with a single neuron (for binary classification)</li>
                     </ul>
                     <pre class="code-snippet">
-# [Optional: Add your code snippet here]
-# Example implementation
-                    </pre>
-                </div>
-                
-                <!-- Architecture 2 -->
-                <div class="architecture-card">
-                    <h4>[Architecture Name 2]</h4>
-                    <p>[Description of this neural network architecture and how you used it in your project]</p>
-                    <!-- Uncomment when you have an image
-                    <img src="images/architecture2.png" alt="Architecture 2" class="project-image">
-                    -->
-                    <h5>Key Components:</h5>
-                    <ul>
-                        <li>[Component 1]</li>
-                        <li>[Component 2]</li>
-                        <li>[Component 3]</li>
-                    </ul>
-                    <pre class="code-snippet">
-# [Optional: Add your code snippet here]
-# Example implementation
-                    </pre>
-                </div>
-                
-                <!-- Architecture 3 -->
-                <div class="architecture-card">
-                    <h4>[Architecture Name 3]</h4>
-                    <p>[Description of this neural network architecture and how you used it in your project]</p>
-                    <!-- Uncomment when you have an image
-                    <img src="images/architecture3.png" alt="Architecture 3" class="project-image">
-                    -->
-                    <h5>Key Components:</h5>
-                    <ul>
-                        <li>[Component 1]</li>
-                        <li>[Component 2]</li>
-                        <li>[Component 3]</li>
-                    </ul>
-                    <pre class="code-snippet">
-# [Optional: Add your code snippet here]
-# Example implementation
+# Model architecture implementation
+import tensorflow as tf
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Dropout
+
+def create_model(input_dim=6392):
+    model = Sequential([
+        Dense(128, activation='relu', input_dim=input_dim),
+        Dropout(0.2),
+        Dense(64, activation='relu'),
+        Dropout(0.2),
+        Dense(1, activation='sigmoid')
+    ])
+    model.compile(optimizer='adam',
+                  loss='binary_crossentropy',
+                  metrics=['accuracy'])
+    return model
                     </pre>
                 </div>
             </div>
         </section>
-
-        <section class="implementation">
-            <h3>Implementation Details</h3>
             
-            <h4>Data Preparation</h4>
-            <p>[Describe how you prepared your text data for neural network processing]</p>
-            <ol>
-                <li>[Preparation step 1]</li>
-                <li>[Preparation step 2]</li>
-                <li>[Preparation step 3]</li>
-                <li>[Preparation step 4]</li>
-            </ol>
-            
-            <h4>Model Development</h4>
-            <p>[Explain your approach to developing and training the neural network models]</p>
+            <h4><i class="fas fa-code"></i> Model Development</h4>
+            <p>This is a classic deep learning approach for text classification, with the following key characteristics:</p>
             <ul>
-                <li>[Development aspect 1]</li>
-                <li>[Development aspect 2]</li>
-                <li>[Development aspect 3]</li>
-                <li>[Development aspect 4]</li>
+                <li>Text is first transformed into numerical features using the Bag-of-Words approach (CountVectorizer)</li>
+                <li>The neural network then learns patterns in these feature vectors</li>
+                <li>The output is a binary prediction (positive/negative sentiment)</li>
+                <li>The model is used to classify text related to climate/environmental topics, with balanced classes for equal representation of positive and negative sentiment examples</li>
             </ul>
             
             <div class="code-example">
-                <h4>Training Process</h4>
+                <h4><i class="fas fa-cog fa-spin"></i> Training Process</h4>
                 <pre class="code-snippet">
-# [Add your training code here]
-# Example:
-def train_model(model, data_loader):
-    # Training implementation
-    pass
+# Training process for the model
+def train_model(model, X_train, y_train, X_val, y_val):
+    history = model.fit(
+        X_train, y_train,
+        epochs=10,
+        batch_size=32,
+        validation_data=(X_val, y_val),
+        callbacks=[
+            tf.keras.callbacks.EarlyStopping(
+                monitor='val_loss', 
+                patience=3, 
+                restore_best_weights=True
+            )
+        ]
+    )
+    return history, model
                 </pre>
             </div>
         </section>
