@@ -8,6 +8,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* Neural Networks specific styling */
+        .conclusions-link {
+            margin-top: 2rem;
+            padding: 1rem;
+            border-top: 1px solid rgba(29, 89, 82, 0.2);
+            font-style: italic;
+        }
+        
+        .conclusions-link a {
+            color: var(--primary-color);
+            font-weight: bold;
+            text-decoration: underline;
+        }
         .insights-container {
             background-color: rgba(185, 202, 200, 0.1);
             border-radius: 8px;
@@ -624,6 +636,10 @@ weighted avg       1.00      1.00      1.00       306
                 <h4><i class="fas fa-file-alt"></i> Implications</h4>
                 <p>These findings suggest that sentiment around climate change follows distinctive linguistic patterns that machine learning models can effectively detect. The neural network's high accuracy (99.67%) demonstrates that these patterns are consistent enough to enable reliable automated sentiment classification.</p>
                 <p>The difference between my results with Support Vector Machines (SVM) and this feed-forward neural network is that the neural network is able to capture more complex patterns in the data, as well as my performace in preparing the data for supervised machine learning.</p>
+                
+                <div class="conclusions-link">
+                    <p><i class="fas fa-arrow-right"></i> For broader reflections on what I've learned through this text mining journey, check out my <a href="textmining_conclusion.html">project conclusions</a>.</p>
+                </div>
             </div>
         </section>
     </div>
