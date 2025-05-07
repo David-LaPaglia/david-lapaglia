@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../../assets/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js" crossorigin="anonymous"></script>
+    <title>David LaPaglia - Credit Card Fraud Classification</title>
+</head>
+<body>
+
+    <h2>Data + Information Scientist</h2>
+    <nav id="nav">
+        <ul>
+            <li><a href="../../index.html">HOME</a></li>
+            <li><a href="../../about.html">ABOUT ME</a></li>
+            <li class="dropdown">
+                <a href="../../projects.html" class="active">PROJECTS</a>
+                <ul class="dropdown-content">
+                    <li><a href="index.html" class="active">ALL PROJECTS</a></li>
+                    <li class="dropdown">
+                        <a href="../../pages/textmining/index.html">TEXT MINING PROJECTS</a>
+                        <ul class="dropdown-content secondary-dropdown">
+                            <li><a href="../../pages/textmining/sustainability/index.html">SUSTAINABILITY ANALYSIS</a></li>
+                            <li><a href="../../pages/textmining/neural_networks/index.html">NEURAL NETWORKS</a></li>
+                            <li><a href="../../pages/textmining/sustainability/sustain_intro.html">INTRODUCTION</a></li>
+                            <li><a href="../../pages/textmining/sustainability/sustain_data.html">DATA</a></li>
+                            <li><a href="../../pages/textmining/index.html">CONCLUSIONS</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="../../resume.html">MY RESUME</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <div class="project-header">
+            <h3>Credit Card Fraud Classification</h3>
+            <p class="project-nav">
+                <a href="index.html">&laquo; Back to Projects</a>
+            </p>
+        </div>
+        
+        <div class="project-overview">
+            <h4>Project Overview</h4>
+            <p>This machine learning project focused on developing models to detect fraudulent credit card transactions. Using a dataset with over 100,000 transactions, the project compared K-Nearest Neighbors (KNN) and Support Vector Machine (SVM) approaches to identify the most effective fraud detection method.</p>
+            
+            <div class="project-image">
+                <img src="../../images/svm.png" alt="Credit Card Fraud Classification">
+            </div>
+        </div>
+
+        <div class="project-details">
+            <h4>Challenge</h4>
+            <p>Credit card fraud presents a significant challenge for financial institutions, with billions lost annually to fraudulent transactions. Effective detection systems must balance accuracy with speed, minimizing both false positives and false negatives.</p>
+
+            <h4>Methodology</h4>
+            <p>The project utilized a comprehensive approach:</p>
+            <ul>
+                <li><strong>Data Preparation:</strong> Processed a large dataset (100k+ rows) of credit card transactions</li>
+                <li><strong>Feature Engineering:</strong> Identified and transformed key features that indicate potential fraud</li>
+                <li><strong>KNN Model:</strong> Implemented a K-Nearest Neighbors classification model</li>
+                <li><strong>SVM Model:</strong> Developed a Support Vector Machine model for comparison</li>
+                <li><strong>Model Evaluation:</strong> Assessed performance using accuracy, precision, recall, and F1 score</li>
+                <li><strong>Hyperparameter Tuning:</strong> Optimized model parameters to enhance detection capabilities</li>
+            </ul>
+
+            <h4>Results</h4>
+            <p>The project achieved impressive results:</p>
+            <ul>
+                <li>96% accuracy in fraud detection</li>
+                <li>96% F1 score, indicating excellent balance between precision and recall</li>
+                <li>Comparative analysis between KNN and SVM revealed strengths and weaknesses of each approach</li>
+                <li>Identified key transaction features that serve as strong indicators of fraudulent activity</li>
+            </ul>
+
+            <h4>Tools & Technologies Used</h4>
+            <ul>
+                <li>Python (scikit-learn for KNN and SVM implementations)</li>
+                <li>Data preprocessing and normalization techniques</li>
+                <li>Cross-validation for model evaluation</li>
+                <li>Performance metrics analysis</li>
+                <li>Data visualization for fraud pattern identification</li>
+            </ul>
+        </div>
+
+        <div class="project-links">
+            <h4>Project Resources</h4>
+            <p>View the code and detailed analysis on <a href="https://github.com/David-LaPaglia/Projects" target="_blank">GitHub</a></p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="social-links">
+                    <a href="https://github.com/David-LaPaglia/Projects" target="_blank" class="social-icon">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/david-lapaglia/" target="_blank" class="social-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:david.lapaglia@colorado.edu" class="social-icon">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                <p>&copy; 2025 David LaPaglia. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../script.js"></script>
+</body>
+</html>

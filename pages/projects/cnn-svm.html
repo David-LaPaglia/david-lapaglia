@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../../assets/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js" crossorigin="anonymous"></script>
+    <title>David LaPaglia - CNN + SVM Classification</title>
+</head>
+<body>
+
+    <h2>Data + Information Scientist</h2>
+    <nav id="nav">
+        <ul>
+            <li><a href="../../index.html">HOME</a></li>
+            <li><a href="../../about.html">ABOUT ME</a></li>
+            <li class="dropdown">
+                <a href="../../projects.html" class="active">PROJECTS</a>
+                <ul class="dropdown-content">
+                    <li><a href="index.html" class="active">ALL PROJECTS</a></li>
+                    <li class="dropdown">
+                        <a href="../../pages/textmining/index.html">TEXT MINING PROJECTS</a>
+                        <ul class="dropdown-content secondary-dropdown">
+                            <li><a href="../../pages/textmining/sustainability/index.html">SUSTAINABILITY ANALYSIS</a></li>
+                            <li><a href="../../pages/textmining/neural_networks/index.html">NEURAL NETWORKS</a></li>
+                            <li><a href="../../pages/textmining/sustainability/sustain_intro.html">INTRODUCTION</a></li>
+                            <li><a href="../../pages/textmining/sustainability/sustain_data.html">DATA</a></li>
+                            <li><a href="../../pages/textmining/index.html">CONCLUSIONS</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="../../resume.html">MY RESUME</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <div class="project-header">
+            <h3>CNN + SVM Classification</h3>
+            <p class="project-nav">
+                <a href="index.html">&laquo; Back to Projects</a>
+            </p>
+        </div>
+        
+        <div class="project-overview">
+            <h4>Project Overview</h4>
+            <p>This project focused on image classification using both Convolutional Neural Networks (CNN) and Support Vector Machines (SVM). The goal was to compare the effectiveness of these two different approaches for classifying traffic light images by color.</p>
+            
+            <div class="project-image">
+                <img src="../../images/cnn.png" alt="CNN + SVM Classification">
+            </div>
+        </div>
+
+        <div class="project-details">
+            <h4>Methodology</h4>
+            <p>The project consisted of several key components:</p>
+            <ul>
+                <li><strong>Data Collection:</strong> Gathered images of red, green, and yellow traffic lights from the internet</li>
+                <li><strong>Data Preprocessing:</strong> Normalized and regularized the image data to ensure consistency</li>
+                <li><strong>CNN Model:</strong> Developed a convolutional neural network model for image classification</li>
+                <li><strong>SVM Model:</strong> Created a Support Vector Machine model from scikit-learn as a "white-box" alternative</li>
+                <li><strong>Comparative Analysis:</strong> Evaluated both models based on accuracy, precision, recall, and F1-score</li>
+            </ul>
+
+            <h4>Key Findings</h4>
+            <p>The comparative analysis revealed important insights:</p>
+            <ul>
+                <li>Performance differences between CNN and SVM for image classification tasks</li>
+                <li>Trade-offs between model complexity and interpretability</li>
+                <li>Strengths and weaknesses of each approach for specific classification scenarios</li>
+                <li>Optimal preprocessing techniques for improving model performance</li>
+            </ul>
+
+            <h4>Tools & Technologies Used</h4>
+            <ul>
+                <li>Python (TensorFlow/Keras for CNN, scikit-learn for SVM)</li>
+                <li>Image preprocessing libraries</li>
+                <li>Model evaluation and performance metrics</li>
+                <li>Data visualization tools</li>
+            </ul>
+        </div>
+
+        <div class="project-links">
+            <h4>Project Resources</h4>
+            <p>View the code and detailed analysis on <a href="https://github.com/David-LaPaglia/Projects" target="_blank">GitHub</a></p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="social-links">
+                    <a href="https://github.com/David-LaPaglia/Projects" target="_blank" class="social-icon">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/david-lapaglia/" target="_blank" class="social-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:david.lapaglia@colorado.edu" class="social-icon">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                <p>&copy; 2025 David LaPaglia. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../script.js"></script>
+</body>
+</html>
