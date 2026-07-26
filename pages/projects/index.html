@@ -7,6 +7,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js" crossorigin="anonymous"></script>
     <title>David LaPaglia - Projects</title>
+    <style>
+        .content .project-card { display: flex; flex-direction: column; }
+        .content .project-card h4 { background-color: #3498db; color: white; margin: 0; padding: 1.5rem; font-size: 1.25rem; }
+        .content .project-card h4 a { color: white; text-decoration: none; }
+        .content .project-card p { padding: 1.5rem; flex: 1; }
+        .content .project-card .project-image { display: block; padding: 0 1.5rem 1.5rem; margin: 0; max-width: none; border: none; }
+        .content .project-card .project-image img { width: 100%; height: auto; border-radius: 8px; }
+    </style>
 </head>
 <body>
 
@@ -14,24 +22,24 @@
     <nav id="nav">
         <ul>
             <li><a href="../../index.html">HOME</a></li>
-            <li><a href="../../about.html">ABOUT ME</a></li>
+            <li><a href="../about.html">ABOUT ME</a></li>
             <li class="dropdown">
-                <a href="../../projects.html" class="active">PROJECTS</a>
+                <a href="./index.html" class="active">PROJECTS</a>
                 <ul class="dropdown-content">
-                    <li><a href="index.html" class="active">ALL PROJECTS</a></li>
+                    <li><a href="./index.html" class="active">ALL PROJECTS</a></li>
                     <li class="dropdown">
-                        <a href="../../pages/textmining/index.html">TEXT MINING PROJECTS</a>
+                        <a href="../textmining/index.html">TEXT MINING PROJECTS</a>
                         <ul class="dropdown-content secondary-dropdown">
-                            <li><a href="../../pages/textmining/sustainability/index.html">SUSTAINABILITY ANALYSIS</a></li>
-                            <li><a href="../../pages/textmining/neural_networks/index.html">NEURAL NETWORKS</a></li>
-                            <li><a href="../../pages/textmining/sustainability/sustain_intro.html">INTRODUCTION</a></li>
-                            <li><a href="../../pages/textmining/sustainability/sustain_data.html">DATA</a></li>
-                            <li><a href="../../pages/textmining/index.html">CONCLUSIONS</a></li>
+                            <li><a href="../textmining/sustainability/index.html">SUSTAINABILITY ANALYSIS</a></li>
+                            <li><a href="../textmining/neural-networks/index.html">NEURAL NETWORKS</a></li>
+                            <li><a href="../textmining/sustainability/introduction.html">INTRODUCTION</a></li>
+                            <li><a href="../textmining/sustainability/data.html">DATA</a></li>
+                            <li><a href="../textmining/index.html">CONCLUSIONS</a></li>
                         </ul>
                     </li>
                 </ul>
             </li>
-            <li><a href="../../resume.html">MY RESUME</a></li>
+            <li><a href="../resume.html">MY RESUME</a></li>
         </ul>
     </nav>
     <div class="content">
@@ -41,42 +49,42 @@
 
         <div class="project-grid">
             <div class="project-card">
-                <h4><a href="career-analysis.html">Career Skills Analysis</a></h4>
+                <h4><a href="./career-analysis.html">Career Skills Analysis</a></h4>
                 <p>An in-depth analysis of career data, comparing academic curriculum with job market demands.</p>
-                <a href="career-analysis.html" class="project-image">
-                    <img src="../../images/jobsalaries.png" alt="Career Skills Analysis">
+                <a href="./career-analysis.html" class="project-image">
+                    <img src="../../assets/images/jobsalaries.png" alt="Career Skills Analysis">
                 </a>
             </div>
 
             <div class="project-card">
-                <h4><a href="greenhouse-emissions.html">Greenhouse Emissions Visualization</a></h4>
+                <h4><a href="./greenhouse-emissions.html">Greenhouse Emissions Visualization</a></h4>
                 <p>Data visualization and exploration of greenhouse emissions and other pollutants.</p>
-                <a href="greenhouse-emissions.html" class="project-image">
-                    <img src="../../images/emissions.png" alt="Greenhouse Emissions Visualization">
+                <a href="./greenhouse-emissions.html" class="project-image">
+                    <img src="../../assets/images/emissions.png" alt="Greenhouse Emissions Visualization">
                 </a>
             </div>
 
             <div class="project-card">
-                <h4><a href="cnn-svm.html">CNN + SVM Classification</a></h4>
+                <h4><a href="./cnn-svm.html">CNN + SVM Classification</a></h4>
                 <p>Image classification comparing convolutional neural networks with SVM models.</p>
-                <a href="cnn-svm.html" class="project-image">
-                    <img src="../../images/cnn.png" alt="CNN + SVM Classification">
+                <a href="./cnn-svm.html" class="project-image">
+                    <img src="../../assets/images/cnn.png" alt="CNN + SVM Classification">
                 </a>
             </div>
 
             <div class="project-card">
-                <h4><a href="spotify-analysis.html">Beats and Bytes: Song Popularity Analysis</a></h4>
+                <h4><a href="./spotify-analysis.html">Beats and Bytes: Song Popularity Analysis</a></h4>
                 <p>Analysis of Spotify data to determine factors that contribute to song popularity.</p>
-                <a href="spotify-analysis.html" class="project-image">
-                    <img src="../../images/bytes&beats.png" alt="Spotify Analysis">
+                <a href="./spotify-analysis.html" class="project-image">
+                    <img src="../../assets/images/bytes&beats.png" alt="Spotify Analysis">
                 </a>
             </div>
 
             <div class="project-card">
-                <h4><a href="credit-card-fraud.html">Credit Card Fraud Classification</a></h4>
+                <h4><a href="./credit-card-fraud.html">Credit Card Fraud Classification</a></h4>
                 <p>Machine learning models to detect credit card fraud using KNN and SVM approaches.</p>
-                <a href="credit-card-fraud.html" class="project-image">
-                    <img src="../../images/svm.png" alt="Credit Card Fraud Detection">
+                <a href="./credit-card-fraud.html" class="project-image">
+                    <img src="../../assets/images/svm.png" alt="Credit Card Fraud Detection">
                 </a>
             </div>
         </div>
@@ -106,6 +114,6 @@
         </div>
     </footer>
 
-    <script src="../../script.js"></script>
+    <script src="../../assets/js/script.js"></script>
 </body>
 </html>

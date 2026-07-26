@@ -3,37 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css" rel="stylesheet">
+    <link href="../../../assets/css/style.css" rel="stylesheet">
     <title>David LaPaglia</title>
 </head>
 <body>
     
 
-<nav id="nav">
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Me</a></li>
-        <li class="dropdown">
-            <a href="projects.html">Projects</a>
-            <ul class="dropdown-content">
-                <li><a href="projects.html">All Projects</a></li>
-                <li class="dropdown">
-                    <a href="textmining.html">Text Mining Projects</a>
-                    <ul class="dropdown-content secondary-dropdown">
-                        <li class="dropdown">
-                            <a href="sustainabilityanalysis.html">Sustainability Analysis</a>
-                            <ul class="dropdown-content tertiary-dropdown">
-                                <li><a href="sustain_intro.html">Introduction</a></li>
-                                <li><a href="sustain_data.html">Data</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
-        <li><a href="resume.html">My Resumé</a></li>
-    </ul>
-</nav>
+    <nav id="nav">
+        <ul>
+            <li><a href="../../../index.html">HOME</a></li>
+            <li><a href="../../about.html">ABOUT ME</a></li>
+            <li class="dropdown">
+                <a href="../../projects/index.html">PROJECTS</a>
+                <ul class="dropdown-content">
+                    <li><a href="../../projects/index.html">ALL PROJECTS</a></li>
+                    <li class="dropdown">
+                        <a href="../index.html">TEXT MINING PROJECTS</a>
+                        <ul class="dropdown-content secondary-dropdown">
+                            <li><a href="./index.html">SUSTAINABILITY ANALYSIS</a></li>
+                            <li><a href="../neural-networks/index.html">NEURAL NETWORKS</a></li>
+                            <li><a href="./introduction.html">INTRODUCTION</a></li>
+                            <li><a href="./data.html">DATA</a></li>
+                            <li><a href="../conclusion.html" class="active">CONCLUSIONS</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="../../resume.html">MY RESUME</a></li>
+        </ul>
+    </nav>
+
 <h1> .</h1>
 <div class="content">
     <h3>Is climate change a threat to our future?</h3>
@@ -129,7 +128,7 @@ Naturalnews                  0       0   0         0             0          0
 
     <h4>Reddit Data Collection</h4>
     <p>For Reddit data collection, I utilized PRAW (Python Reddit API Wrapper). An example of the data structure is as follows:</p>
-    <img src="images/unclean_data1.png" class="project-image">
+    <img src="../../../assets/images/unclean_data1.png" class="project-image">
     <p>When using PRAW I created a seperate python file to contain a majority of my python reddit helper functions. That 
         is what is called, pythonHelperFunctions.py in this case. This file was imported into my main python file.
         There were two majors functions I wrote to gather data from reddit, one to get comments from a specific subreddit, useful for 
@@ -137,9 +136,9 @@ Naturalnews                  0       0   0         0             0          0
         search through all the subreddits based on specicif search term - this is what I used for the majority later 
         on in the project.
     </p>
-    <img src='images/function1.png' class="project-image">
+    <img src='../../../assets/images/function1.png' class="project-image">
     <p>and</p>
-    <img src='images/function2.png' class="project-image">
+    <img src='../../../assets/images/function2.png' class="project-image">
     <p>It was important to account for no text because in cases of empty returns it would break my code when I was trying to dump no data into a json.</p>
     <p>The JSON data structures from both News API and Reddit were semi-structured, presenting unique challenges in data cleaning and standardization. Each source required specific handling:</p>
     <ul>
@@ -174,24 +173,24 @@ Naturalnews                  0       0   0         0             0          0
     <p>To better understand the collected data:</p>
     <ul>
         <li>Word Clouds: Visual representation of term frequency across sources</li>
-        <img src="images/wordcloud.png" class="project-image">
+        <img src="../../../assets/images/wordcloud.png" class="project-image">
         <li>Dataframes: Data exploration and analysis</li>
     </ul>
 
     <h5>Web Scraped TFIDF:</h5>
     <p>After I gathered URLs from the NEWSAPI I Programmatically scraped content from the sites - then I made a TFIDF sparse matrix out of that newly created corpus.</p>
-    <img src="images/tfidf.png" class="project-image">
+    <img src="../../../assets/images/tfidf.png" class="project-image">
 
     <h5>NewsAPI Data Deliverable</h5>
     <p>I did two queries with the News api to get the data that I collected. This then turned into two seperate dataframes that were vecotrized. One datafram is of vectorized data from the query "air pollution" and the other the term "climate change".</p>
     <h6>Climate Change Data</h6>
-    <img src="images/news_api_climate_change.png" class="project-image">
+    <img src="../../../assets/images/news_api_climate_change.png" class="project-image">
     <h6>Air Pollution Data</h6>
-    <img src="images/news_api_air_pollution.png" class="project-image">
+    <img src="../../../assets/images/news_api_air_pollution.png" class="project-image">
 
     <h3> Key Data Processing Function</h3>
     <p>This function would be plugged right into the vecotorizer objects to systemattically clean and process the data!</p>
-    <img src="images/data_clean_function.png" class="project-image">
+    <img src="../../../assets/images/data_clean_function.png" class="project-image">
     <p>This was implemented into the vectorizer objects from scikit learn to process the data before it vectorized the words. I needed stemming and lemmitization to occur and found it conveinvent that we can implement it right into the object.</p>
 
     <h5>Next Steps</h5>
@@ -217,6 +216,6 @@ Naturalnews                  0       0   0         0             0          0
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="../../../assets/js/script.js"></script>
 </body>
 </html>

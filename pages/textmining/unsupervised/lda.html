@@ -3,38 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css" rel="stylesheet">
+    <link href="../../../assets/css/style.css" rel="stylesheet">
     <title>David LaPaglia</title>
 </head>
 <body>
 
 
 
-<nav id="nav">
-    <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About Me</a></li>
-        <li class="dropdown">
-            <a href="projects.html">Projects</a>
-            <ul class="dropdown-content">
-                <li><a href="projects.html">All Projects</a></li>
-                <li class="dropdown">
-                    <a href="textmining.html">Text Mining Projects</a>
-                    <ul class="dropdown-content secondary-dropdown">
-                        <li class="dropdown">
-                            <a href="sustainabilityanalysis.html">Sustainability Analysis</a>
-                            <ul class="dropdown-content tertiary-dropdown">
-                                <li><a href="sustain_intro.html">Introduction</a></li>
-                                <li><a href="sustain_data.html">Data</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
-        <li><a href="resume.html">My Resumé</a></li>
-    </ul>
-</nav>
+    <nav id="nav">
+        <ul>
+            <li><a href="../../../index.html">HOME</a></li>
+            <li><a href="../../about.html">ABOUT ME</a></li>
+            <li class="dropdown">
+                <a href="../../projects/index.html">PROJECTS</a>
+                <ul class="dropdown-content">
+                    <li><a href="../../projects/index.html">ALL PROJECTS</a></li>
+                    <li class="dropdown">
+                        <a href="../index.html">TEXT MINING PROJECTS</a>
+                        <ul class="dropdown-content secondary-dropdown">
+                            <li><a href="../sustainability/index.html">SUSTAINABILITY ANALYSIS</a></li>
+                            <li><a href="../neural-networks/index.html">NEURAL NETWORKS</a></li>
+                            <li><a href="../sustainability/introduction.html">INTRODUCTION</a></li>
+                            <li><a href="../sustainability/data.html">DATA</a></li>
+                            <li><a href="../conclusion.html" class="active">CONCLUSIONS</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="../../resume.html">MY RESUME</a></li>
+        </ul>
+    </nav>
 
 <div class="content">
     <h2>Latent Dirichlet Allocation</h2>
@@ -49,26 +47,26 @@
         <p>To perform LDA, the data must be preprocessed and formatted. This involves tokenizing the text, removing stop words, and creating a document-term matrix.</p>
         <p>I used my favorite Vectorizer for this, CountVecotrizer from sklearn!</p>
         <p>Here is an example of how the data looks:</p>
-        <img src="images/lda/Screenshot 2025-03-30 at 6.10.26 PM.png" alt="Data Example" style="width: 100%; height: auto;">
+        <img src="../../../assets/images/lda/Screenshot 2025-03-30 at 6.10.26 PM.png" alt="Data Example" style="width: 100%; height: auto;">
         <p>Since LDA is unsupervised, I strip the labels right from them, here you can see the labels are the subreddit that I gatherred the text data!</p>
-        <img src="images/lda/Screenshot 2025-03-30 at 6.15.07 PM.png" alt="Data Example" style="width: 100%; height: auto;">
-        <img src="images/lda/Screenshot 2025-03-30 at 6.16.59 PM.png" alt="Data Example" style="width: 100%; height: auto;">
+        <img src="../../../assets/images/lda/Screenshot 2025-03-30 at 6.15.07 PM.png" alt="Data Example" style="width: 100%; height: auto;">
+        <img src="../../../assets/images/lda/Screenshot 2025-03-30 at 6.16.59 PM.png" alt="Data Example" style="width: 100%; height: auto;">
     </section>
     <div>
         <h3>Analysis visualization</h3>
         <p>After running LDA, I visualize the topics using pyLDAvis, which provides an interactive interface to explore the topics and their relationships.</p>
         <p>Here is an example of how the data looks:</p>
-        <img src="images/lda/Screenshot 2025-03-30 at 6.38.14 PM.png" alt="Data Example" style="width: 100%; height: auto;">
+        <img src="../../../assets/images/lda/Screenshot 2025-03-30 at 6.38.14 PM.png" alt="Data Example" style="width: 100%; height: auto;">
         <p> Or you can interact with it here!</p>
         <!-- Make it a button to click on and visually appealing-->
         <div class="button-container">
-            <a href="lda_visualization.html" class="btn-vis">
+            <a href="../visualizations/lda-visualization.html" class="btn-vis">
                 <i class="fas fa-chart-network"></i> Interactive Topic Visualization
             </a>
         </div>
         
         <p>Here is a sample of the topics that I found:</p>
-        <img src="images/lda/lda_topics.png" alt="Data Example" style="width: 100%; height: auto;">
+        <img src="../../../assets/images/lda/lda_topics.png" alt="Data Example" style="width: 100%; height: auto;">
     </div>
     <div>
         <h3>Overall Themes</h3>

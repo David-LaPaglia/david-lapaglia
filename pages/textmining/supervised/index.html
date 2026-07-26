@@ -3,38 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css" rel="stylesheet">
+    <link href="../../../assets/css/style.css" rel="stylesheet">
     <title>David LaPaglia</title>
 </head>
 <body>
 
 
+    <nav id="nav">
+        <ul>
+            <li><a href="../../../index.html">HOME</a></li>
+            <li><a href="../../about.html">ABOUT ME</a></li>
+            <li class="dropdown">
+                <a href="../../projects/index.html">PROJECTS</a>
+                <ul class="dropdown-content">
+                    <li><a href="../../projects/index.html">ALL PROJECTS</a></li>
+                    <li class="dropdown">
+                        <a href="../index.html">TEXT MINING PROJECTS</a>
+                        <ul class="dropdown-content secondary-dropdown">
+                            <li><a href="../sustainability/index.html">SUSTAINABILITY ANALYSIS</a></li>
+                            <li><a href="../neural-networks/index.html">NEURAL NETWORKS</a></li>
+                            <li><a href="../sustainability/introduction.html">INTRODUCTION</a></li>
+                            <li><a href="../sustainability/data.html">DATA</a></li>
+                            <li><a href="../conclusion.html" class="active">CONCLUSIONS</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="../../resume.html">MY RESUME</a></li>
+        </ul>
+    </nav>
 
-<nav id="nav">
-    <ul>
-        <li><a href="index.html"</a></li>
-        <li><a href="about.html">About Me</a></li>
-        <li class="dropdown">
-            <a href="projects.html">Projects</a>
-            <ul class="dropdown-content">
-                <li><a href="projects.html">All Projects</a></li>
-                <li class="dropdown">
-                    <a href="textmining.html">Text Mining Projects</a>
-                    <ul class="dropdown-content secondary-dropdown">
-                        <li class="dropdown">
-                            <a href="sustainabilityanalysis.html">Sustainability Analysis</a>
-                            <ul class="dropdown-content tertiary-dropdown">
-                                <li><a href="sustain_intro.html">Introduction</a></li>
-                                <li><a href="sustain_data.html">Data</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
-        <li><a href="resume.html">My Resumé</a></li>
-    </ul>
-</nav>
 
 <div class="content">
     <h2>Sustainability Analysis Project</h2>
@@ -53,15 +51,15 @@
         <div class="component-grid">
         
             <div class="component-card">
-                <h4><a href="naive_bayes.html">Naive Bayes (Multinomial)</a></h4>
+                <h4><a href="./naive-bayes.html">Naive Bayes (Multinomial)</a></h4>
                 <p>Naive Bayes is a family of probabilistic algorithms based on Bayes' theorem, used for classification tasks. The Multinomial Naive Bayes variant is particularly effective for text classification, where the features are the frequencies of words in the documents.</p>                
             </div>
             <div class="component-card">
-                <h4><a href="dt.html">Decision Tree</a></h4>
+                <h4><a href="./decision-tree.html">Decision Tree</a></h4>
                 <p>A Decision Tree is a supervised learning algorithm used for classification and regression tasks. It splits the data into subsets based on the value of input features, creating a tree-like model of decisions.</p>                
             </div>
             <div class="component-card">
-                <h4><a href="svm.html">Support Vector Machines</a></h4>
+                <h4><a href="./svm.html">Support Vector Machines</a></h4>
                 <p>Support Vector Machines (SVM) are supervised learning models used for classification and regression analysis. They work by finding the optimal hyperplane that separates data points of different classes in a high-dimensional space.</p>
                 
             </div>
