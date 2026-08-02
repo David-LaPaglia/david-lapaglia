@@ -500,6 +500,20 @@ section {
     padding: 15px 20px;
 }
 
+.project-header h3,
+.project-header h4 {
+    color: #ffffff;
+    margin: 0;
+}
+
+.project-header .project-nav a {
+    color: #ffffff;
+}
+
+.project-header .project-nav a:hover {
+    color: var(--accent-color);
+}
+
 .project-header h4 {
     margin: 0;
     font-size: 1.3rem;
