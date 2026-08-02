@@ -47,6 +47,12 @@ document.addEventListener('DOMContentLoaded', () => {
         card.classList.add('slide-up');
         observer.observe(card);
     });
+
+    // Animate insight and architecture cards on content pages
+    document.querySelectorAll('.insight-card, .architecture-card').forEach(card => {
+        card.classList.add('fade-in');
+        observer.observe(card);
+    });
 });
 
 // Update active navigation link based on scroll position
@@ -72,22 +78,51 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Handle dropdown menu interactions
-document.querySelectorAll('.dropdown').forEach(dropdown => {
-    dropdown.addEventListener('mouseenter', function() {
-        const dropdownContent = this.querySelector('.dropdown-content');
-        if (dropdownContent) {
-            dropdownContent.style.display = 'block';
-        }
+// Mobile navigation: hamburger toggle
+const nav = document.getElementById('nav');
+const navToggle = document.querySelector('.nav-toggle');
+
+if (nav && navToggle) {
+    navToggle.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('nav-open');
+        navToggle.setAttribute('aria-expanded', String(isOpen));
+        document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
-    dropdown.addEventListener('mouseleave', function() {
-        const dropdownContent = this.querySelector('.dropdown-content');
-        if (dropdownContent) {
-            dropdownContent.style.display = 'none';
+    // Close the menu when a leaf link is tapped
+    nav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', (e) => {
+            const parentLi = link.parentElement;
+            const isMobile = window.matchMedia('(max-width: 768px)').matches;
+            const hasSubmenu = parentLi.classList.contains('dropdown');
+
+            if (isMobile && hasSubmenu) {
+                // First tap opens the submenu instead of navigating
+                if (!parentLi.classList.contains('open')) {
+                    e.preventDefault();
+                    parentLi.classList.add('open');
+                    return;
+                }
+            }
+
+            if (isMobile && !hasSubmenu) {
+                nav.classList.remove('nav-open');
+                navToggle.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            }
+        });
+    });
+
+    // Reset menu state when resizing to desktop
+    window.addEventListener('resize', () => {
+        if (!window.matchMedia('(max-width: 768px)').matches) {
+            nav.classList.remove('nav-open');
+            navToggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+            nav.querySelectorAll('.dropdown.open').forEach(d => d.classList.remove('open'));
         }
     });
-});
+}
 
 // Add loading animation for images
 document.addEventListener('DOMContentLoaded', () => {

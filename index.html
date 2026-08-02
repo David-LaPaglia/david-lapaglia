@@ -15,7 +15,7 @@
         .featured-projects h3 {
             text-align: center;
             font-size: 2.5rem;
-            color: #2c3e50;
+            color: var(--primary-dark);
             margin-bottom: 0.5rem;
         }
         .section-subtitle {
@@ -66,7 +66,7 @@
         }
         .featured-projects .project-content h4 {
             margin: 0 0 0.75rem 0;
-            color: #2c3e50;
+            color: var(--primary-dark);
             font-size: 1.25rem;
         }
         .featured-projects .project-content p {
@@ -81,8 +81,8 @@
             margin: 1rem 0;
         }
         .featured-projects .project-tags span {
-            background: rgba(52, 152, 219, 0.1);
-            color: #2980b9;
+            background: rgba(29, 89, 82, 0.1);
+            color: var(--primary-dark);
             padding: 0.25rem 0.75rem;
             border-radius: 999px;
             font-size: 0.75rem;
@@ -92,7 +92,7 @@
             display: inline-block;
             align-self: flex-start;
             padding: 0.75rem 1.25rem;
-            background-color: #3498db;
+            background-color: var(--primary-color);
             color: #fff;
             border-radius: 6px;
             text-decoration: none;
@@ -101,7 +101,7 @@
             margin-top: auto;
         }
         .featured-projects .project-link:hover {
-            background-color: #2980b9;
+            background-color: var(--primary-dark);
         }
         .featured-projects .view-all {
             text-align: center;
@@ -116,6 +116,7 @@
 </head>
 <body>
 <nav id="nav">
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
 <ul>
     <li><a href="./index.html">HOME</a></li>
     <li><a href="./pages/about.html">ABOUT ME</a></li>
@@ -218,6 +219,21 @@
         <div class="project-grid">
             <div class="project-card">
                 <div class="project-image">
+                    <img src="./assets/images/lectern.svg" alt="Lectern Capstone">
+                </div>
+                <div class="project-content">
+                    <h4>Lectern</h4>
+                    <p>Full-stack web application that helps university students read and manage their assignments, built with React, Django, and Docker.</p>
+                    <div class="project-tags">
+                        <span>React</span>
+                        <span>Django</span>
+                        <span>HCI</span>
+                    </div>
+                    <a href="./pages/projects/info-capstone.html" class="project-link">Explore Project</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">
                     <img src="./assets/images/pyLDAViz.png" alt="Sustainability Analysis Project">
                 </div>
                 <div class="project-content">
@@ -233,20 +249,6 @@
             </div>
             <div class="project-card">
                 <div class="project-image">
-                    <img src="./assets/images/jobsalaries.png" alt="Career Skills Analysis">
-                </div>
-                <div class="project-content">
-                    <h4>Career Skills Analysis</h4>
-                    <p>Comparing academic curriculum with real-world job market demand using data analysis and visualization.</p>
-                    <div class="project-tags">
-                        <span>Python</span>
-                        <span>Data Viz</span>
-                    </div>
-                    <a href="./pages/projects/career-analysis.html" class="project-link">Explore Project</a>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-image">
                     <img src="./assets/images/emissions.png" alt="Greenhouse Emissions Visualization">
                 </div>
                 <div class="project-content">
@@ -257,48 +259,6 @@
                         <span>Python</span>
                     </div>
                     <a href="./pages/projects/greenhouse-emissions.html" class="project-link">Explore Project</a>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="./assets/images/cnn.png" alt="CNN plus SVM Classification">
-                </div>
-                <div class="project-content">
-                    <h4>CNN + SVM Classification</h4>
-                    <p>Image classification comparing convolutional neural networks with support vector machines.</p>
-                    <div class="project-tags">
-                        <span>Deep Learning</span>
-                        <span>Computer Vision</span>
-                    </div>
-                    <a href="./pages/projects/cnn-svm.html" class="project-link">Explore Project</a>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="./assets/images/bytes&beats.png" alt="Spotify Song Popularity Analysis">
-                </div>
-                <div class="project-content">
-                    <h4>Beats and Bytes</h4>
-                    <p>Spotify data analysis uncovering the factors that drive song popularity and listener engagement.</p>
-                    <div class="project-tags">
-                        <span>Analytics</span>
-                        <span>Python</span>
-                    </div>
-                    <a href="./pages/projects/spotify-analysis.html" class="project-link">Explore Project</a>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="./assets/images/svm.png" alt="Credit Card Fraud Classification">
-                </div>
-                <div class="project-content">
-                    <h4>Credit Card Fraud</h4>
-                    <p>Machine learning classifiers to detect fraudulent credit card transactions with KNN and SVM.</p>
-                    <div class="project-tags">
-                        <span>Classification</span>
-                        <span>Scikit-Learn</span>
-                    </div>
-                    <a href="./pages/projects/credit-card-fraud.html" class="project-link">Explore Project</a>
                 </div>
             </div>
         </div>
